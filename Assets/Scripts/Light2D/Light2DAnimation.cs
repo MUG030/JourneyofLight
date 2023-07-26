@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -20,12 +20,12 @@ public class Light2DAnimation : MonoBehaviour
 
     private void Update()
     {
-        // Inner‚Ì’l‚ð˜A‘±‚Å•Ï‰»‚³‚¹‚éƒAƒjƒ[ƒVƒ‡ƒ“
+        // Innerã®å€¤ã‚’é€£ç¶šã§å¤‰åŒ–ã•ã›ã‚‹ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³
         currentValue += (isIncreasing ? 1 : -1) * animationSpeed * Time.deltaTime;
         currentValue = Mathf.Clamp(currentValue, minValue, maxValue);
         light2D.pointLightInnerRadius = currentValue;
 
-        // ’l‚ªÅ‘å’l‚Ü‚½‚ÍÅ¬’l‚É’B‚µ‚½‚ç•ûŒü‚ð‹t‚É‚·‚é
+        // å€¤ãŒæœ€å¤§å€¤ã¾ãŸã¯æœ€å°å€¤ã«é”ã—ãŸã‚‰æ–¹å‘ã‚’é€†ã«ã™ã‚‹
         if (currentValue >= maxValue || currentValue <= minValue)
         {
             isIncreasing = !isIncreasing;

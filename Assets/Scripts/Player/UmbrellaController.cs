@@ -1,15 +1,15 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UmbrellaController : MonoBehaviour
 {
-    public float umbrellaMoveSpeedMultiplier = 0.5f; // P‚ğ·‚µ‚Ä‚¢‚éŠÔ‚ÌˆÚ“®‘¬“x‚Ì”{—¦
-    public float umbrellaFallSpeedMultiplier = 0.5f; // P‚ğ·‚µ‚Ä‚¢‚éŠÔ‚Ì—‰º‘¬“x‚Ì”{—¦
+    public float umbrellaMoveSpeedMultiplier = 0.5f; // å‚˜ã‚’å·®ã—ã¦ã„ã‚‹é–“ã®ç§»å‹•é€Ÿåº¦ã®å€ç‡
+    public float umbrellaFallSpeedMultiplier = 0.5f; // å‚˜ã‚’å·®ã—ã¦ã„ã‚‹é–“ã®è½ä¸‹é€Ÿåº¦ã®å€ç‡
 
-    private PlayerMoveController moveController; // PlayerMoveControllerƒXƒNƒŠƒvƒg‚Ö‚ÌQÆ
-    private Rigidbody2D rb; // ƒvƒŒƒCƒ„[‚ÌRigidbody2DƒRƒ“ƒ|[ƒlƒ“ƒg
-    private bool isUmbrellaOpen = false; // P‚ªŠJ‚¢‚Ä‚¢‚é‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO
+    private PlayerMoveController moveController; // PlayerMoveControllerã‚¹ã‚¯ãƒªãƒ—ãƒˆã¸ã®å‚ç…§
+    private Rigidbody2D rb; // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®Rigidbody2Dã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+    private bool isUmbrellaOpen = false; // å‚˜ãŒé–‹ã„ã¦ã„ã‚‹ã‹ã©ã†ã‹ã®ãƒ•ãƒ©ã‚°
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class UmbrellaController : MonoBehaviour
 
     private void Update()
     {
-        // ƒVƒtƒgƒL[‚ğ‰Ÿ‚µ‚½‚çP‚ğØ‚è‘Ö‚¦‚é
+        // ã‚·ãƒ•ãƒˆã‚­ãƒ¼ã‚’æŠ¼ã—ãŸã‚‰å‚˜ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             isUmbrellaOpen = !isUmbrellaOpen;
@@ -31,15 +31,15 @@ public class UmbrellaController : MonoBehaviour
     {
         if (isUmbrellaOpen)
         {
-            // P‚ğ·‚µ‚Ä‚¢‚éŠÔ‚Ìˆ—
-            moveController.SetMoveSpeed(umbrellaMoveSpeedMultiplier); // ˆÚ“®‘¬“x‚ğŒ¸‚ç‚·
-            moveController.SetGravityScale(umbrellaFallSpeedMultiplier); // —‰º‘¬“x‚ğŒ¸‚ç‚·
+            // å‚˜ã‚’å·®ã—ã¦ã„ã‚‹é–“ã®å‡¦ç†
+            moveController.SetMoveSpeed(umbrellaMoveSpeedMultiplier); // ç§»å‹•é€Ÿåº¦ã‚’æ¸›ã‚‰ã™
+            moveController.SetGravityScale(umbrellaFallSpeedMultiplier); // è½ä¸‹é€Ÿåº¦ã‚’æ¸›ã‚‰ã™
         }
         else
         {
-            // P‚ğ•Â‚¶‚Ä‚¢‚éŠÔ‚Ìˆ—
-            moveController.SetMoveSpeed(1f); // ˆÚ“®‘¬“x‚ğŒ³‚É–ß‚·
-            moveController.SetGravityScale(1f); // —‰º‘¬“x‚ğŒ³‚É–ß‚·
+            // å‚˜ã‚’é–‰ã˜ã¦ã„ã‚‹é–“ã®å‡¦ç†
+            moveController.SetMoveSpeed(1f); // ç§»å‹•é€Ÿåº¦ã‚’å…ƒã«æˆ»ã™
+            moveController.SetGravityScale(1f); // è½ä¸‹é€Ÿåº¦ã‚’å…ƒã«æˆ»ã™
         }
     }
 }

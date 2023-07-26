@@ -1,34 +1,34 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMoveController : MonoBehaviour
 {
-    public float moveSpeed = 5f; // ƒvƒŒƒCƒ„[‚ÌˆÚ“®‘¬“x
-    public float jumpForce = 10f; // ƒWƒƒƒ“ƒv—Í
-    public float groundCheckDistance = 0.1f; // ’n–Ê”»’è‚Ì‹——£
+    public float moveSpeed = 5f; // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç§»å‹•é€Ÿåº¦
+    public float jumpForce = 10f; // ã‚¸ãƒ£ãƒ³ãƒ—åŠ›
+    public float groundCheckDistance = 0.1f; // åœ°é¢åˆ¤å®šã®è·é›¢
     float horizontalInput = 0.0f;
-    public LayerMask groundLayer; // ’n–Ê‚Æ”»’è‚·‚éƒŒƒCƒ„[ƒ}ƒXƒN
+    public LayerMask groundLayer; // åœ°é¢ã¨åˆ¤å®šã™ã‚‹ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒã‚¹ã‚¯
 
-    private float originalMoveSpeed; // ‰Šú‚ÌˆÚ“®‘¬“x
-    private float originalGravityScale; // ‰Šú‚Ìd—ÍƒXƒP[ƒ‹
+    private float originalMoveSpeed; // åˆæœŸã®ç§»å‹•é€Ÿåº¦
+    private float originalGravityScale; // åˆæœŸã®é‡åŠ›ã‚¹ã‚±ãƒ¼ãƒ«
 
-    // ’n–Ê‚ÉÚG‚µ‚Ä‚¢‚é‚©‚ğ”»’è
+    // åœ°é¢ã«æ¥è§¦ã—ã¦ã„ã‚‹ã‹ã‚’åˆ¤å®š
     private bool isGrounded;
 
-    private Rigidbody2D rb; // ƒvƒŒƒCƒ„[‚ÌRigidbody2DƒRƒ“ƒ|[ƒlƒ“ƒg
+    private Rigidbody2D rb; // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®Rigidbody2Dã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        originalMoveSpeed = moveSpeed; // ‰Šú‚ÌˆÚ“®‘¬“x‚ğİ’è
-        originalGravityScale = rb.gravityScale; // ‰Šú‚Ìd—ÍƒXƒP[ƒ‹‚ğİ’è
+        originalMoveSpeed = moveSpeed; // åˆæœŸã®ç§»å‹•é€Ÿåº¦ã‚’è¨­å®š
+        originalGravityScale = rb.gravityScale; // åˆæœŸã®é‡åŠ›ã‚¹ã‚±ãƒ¼ãƒ«ã‚’è¨­å®š
     }
 
     private void Update()
     {
-        // ¶‰E‚Ì“ü—Í‚ğæ“¾
+        // å·¦å³ã®å…¥åŠ›ã‚’å–å¾—
         horizontalInput = Input.GetAxis("Horizontal");
 
         if (horizontalInput > 0.0f)
@@ -40,7 +40,7 @@ public class PlayerMoveController : MonoBehaviour
             transform.localScale = new Vector2(-1, 1);
         }
 
-        // ƒXƒy[ƒXƒL[‚ğ‰Ÿ‚µ‚½‚çƒWƒƒƒ“ƒv‚·‚é
+        // ã‚¹ãƒšãƒ¼ã‚¹ã‚­ãƒ¼ã‚’æŠ¼ã—ãŸã‚‰ã‚¸ãƒ£ãƒ³ãƒ—ã™ã‚‹
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
@@ -53,12 +53,12 @@ public class PlayerMoveController : MonoBehaviour
 
         if (isGrounded || horizontalInput != 0)
         {
-            // ˆÚ“®•ûŒü‚É‘¬“x‚ğ“K—p
+            // ç§»å‹•æ–¹å‘ã«é€Ÿåº¦ã‚’é©ç”¨
             rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
         }
     }
 
-    // ’n–Ê”»’è‚ğs‚¤ŠÖ”
+    // åœ°é¢åˆ¤å®šã‚’è¡Œã†é–¢æ•°
     private bool CheckGround()
     {
         Vector2 position = transform.position;
@@ -69,7 +69,7 @@ public class PlayerMoveController : MonoBehaviour
         return hit.collider != null;
     }
 
-    // ƒWƒƒƒ“ƒv‚·‚éŠÖ”
+    // ã‚¸ãƒ£ãƒ³ãƒ—ã™ã‚‹é–¢æ•°
     private void Jump()
     {
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -77,13 +77,13 @@ public class PlayerMoveController : MonoBehaviour
 
     public void SetMoveSpeed(float multiplier)
     {
-        // ˆÚ“®‘¬“x‚ğ”{—¦‚Å•ÏX‚·‚é
+        // ç§»å‹•é€Ÿåº¦ã‚’å€ç‡ã§å¤‰æ›´ã™ã‚‹
         moveSpeed = originalMoveSpeed * multiplier;
     }
 
     public void SetGravityScale(float multiplier)
     {
-        // —‰º‘¬“x‚ğ”{—¦‚Å•ÏX‚·‚é
+        // è½ä¸‹é€Ÿåº¦ã‚’å€ç‡ã§å¤‰æ›´ã™ã‚‹
         rb.gravityScale = originalGravityScale * multiplier;
     }
 }

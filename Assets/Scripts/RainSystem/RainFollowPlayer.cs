@@ -1,12 +1,12 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RainFollowPlayer : MonoBehaviour
 {
-    [SerializeField] Transform playerTransform; // ƒvƒŒƒCƒ„[‚ÌTransform
+    [SerializeField] Transform playerTransform; // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®Transform
 
-    private ParticleSystem rainParticleSystem; // ‰J‚ÌParticleSystem
+    private ParticleSystem rainParticleSystem; // é›¨ã®ParticleSystem
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class RainFollowPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // ƒvƒŒƒCƒ„[‚ÌˆÊ’u‚É‡‚í‚¹‚Ä‰J‚ÌParticleSystem‚ğˆÚ“®‚·‚é
+        // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ä½ç½®ã«åˆã‚ã›ã¦é›¨ã®ParticleSystemã‚’ç§»å‹•ã™ã‚‹
         if (playerTransform != null)
         {
             transform.position = new Vector2(playerTransform.position.x, playerTransform.position.y + 10);
