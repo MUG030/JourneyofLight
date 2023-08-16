@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 526575629}
   - component: {fileID: 526575628}
   - component: {fileID: 526575627}
+  - component: {fileID: 526575630}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -498,22 +499,22 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.28773582, b: 0.28773582, a: 1}
-        key1: {r: 1, g: 0.59829193, b: 0.21226418, a: 1}
+        key0: {r: 0.8509804, g: 0.12156863, b: 0.8, a: 1}
+        key1: {r: 0.7294118, g: 0.7607843, b: 0.98039216, a: 1}
         key2: {r: 0.2971698, g: 1, b: 0.6802175, a: 0}
         key3: {r: 0.21960661, g: 0.9469892, b: 0.990566, a: 0}
         key4: {r: 0.70720583, g: 0.3254717, b: 1, a: 0}
-        key5: {r: 1, g: 0.4481132, b: 0.6890687, a: 0}
-        key6: {r: 0.9653035, g: 1, b: 0.3443396, a: 0}
-        key7: {r: 0, g: 0, b: 0, a: 0}
+        key5: {r: 0.9098039, g: 0.36862746, b: 0.8745098, a: 0}
+        key6: {r: 0.44705883, g: 0.5058824, b: 0.9647059, a: 0}
+        key7: {r: 0.44705883, g: 0.5058824, b: 0.9647059, a: 0}
         ctime0: 8096
         ctime1: 16962
         ctime2: 26600
         ctime3: 35852
         ctime4: 45682
         ctime5: 55319
-        ctime6: 65535
-        ctime7: 0
+        ctime6: 58982
+        ctime7: 65535
         atime0: 0
         atime1: 65535
         atime2: 0
@@ -524,7 +525,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 1
         m_ColorSpace: 0
-        m_NumColorKeys: 7
+        m_NumColorKeys: 8
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -1195,7 +1196,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 1.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5051,12 +5052,25 @@ Transform:
   m_GameObject: {fileID: 526575626}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0.46, z: 0}
+  m_LocalPosition: {x: -1.12, y: -2.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &526575630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526575626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ce47b73ca2e9d4db00113b5f889b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followSpeed: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
