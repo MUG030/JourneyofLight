@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: New Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: c162a9879a93df9438d202d5fc607822, type: 3}
+    - {fileID: 2800000, guid: 5f524ddb15f55e143bc2e36f921483e0, type: 3}
+    - {fileID: 2800000, guid: 711b0346a951528438b3ea7b4a43be03, type: 3}
+    - {fileID: 2800000, guid: 39d947977c7bd7441b4c71cdd2ba1a7e, type: 3}
+    - {fileID: 2800000, guid: 14c1b98056a223c4aa264b667d765d71, type: 3}
+    - {fileID: 2800000, guid: 51463a22bf4722249a039458c41e1959, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 14c1b98056a223c4aa264b667d765d71: 21300000
+    - 51463a22bf4722249a039458c41e1959: 21300000
+    - 711b0346a951528438b3ea7b4a43be03: 21300000
+    - c162a9879a93df9438d202d5fc607822: 21300000
+    - 39d947977c7bd7441b4c71cdd2ba1a7e: 21300000
+    - 5f524ddb15f55e143bc2e36f921483e0: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 14c1b98056a223c4aa264b667d765d71, type: 3}
+  - {fileID: 21300000, guid: 51463a22bf4722249a039458c41e1959, type: 3}
+  - {fileID: 21300000, guid: 711b0346a951528438b3ea7b4a43be03, type: 3}
+  - {fileID: 21300000, guid: c162a9879a93df9438d202d5fc607822, type: 3}
+  - {fileID: 21300000, guid: 39d947977c7bd7441b4c71cdd2ba1a7e, type: 3}
+  - {fileID: 21300000, guid: 5f524ddb15f55e143bc2e36f921483e0, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Rectangle 35
+  - Star 1
+  - Group 1
+  - Ellipse 17
+  - Polygon 1
+  - Ellipse 18
+  m_RenderDataMap: {}
+  m_Tag: New Sprite Atlas
+  m_IsVariant: 0
