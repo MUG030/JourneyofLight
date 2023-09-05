@@ -67,6 +67,17 @@ public class CollectItem : MonoBehaviour
     /// </summary>
     public void Drop()
     {
+        Debug.Log("Drop");
+        //ランダムなObjectを2～4個の範囲で出現させる
+        var random = Random.Range(2, 5);
+        for (int i = 0; i < random; i++)
+        {
+            //ランダムな位置に出現させる
+            var randomPosition = new Vector3(Random.Range(-1.0f, 1.0f), 0.0f, Random.Range(-1.0f, 1.0f));
+            var item = Instantiate(this.gameObject, this.transform.position + randomPosition, Quaternion.identity);
+            item.GetComponent<CollectItem>().Collect();
+        }
+
         this.gameObject.SetActive(true);
     }
 
