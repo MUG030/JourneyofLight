@@ -10,11 +10,11 @@ public class PlayerMoveController : MonoBehaviour
     float horizontalInput = 0.0f;
     public LayerMask groundLayer; // 地面と判定するレイヤーマスク
 
-    private float originalMoveSpeed; // 初期の移動速度
-    private float originalGravityScale; // 初期の重力スケール
+    private float _originalMoveSpeed; // 初期の移動速度
+    private float _originalGravityScale; // 初期の重力スケール
 
     // 地面に接触しているかを判定
-    private bool isGrounded;
+    private bool _isGrounded;
 
     private Rigidbody2D rb; // プレイヤーのRigidbody2Dコンポーネント
 
@@ -22,8 +22,8 @@ public class PlayerMoveController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        originalMoveSpeed = moveSpeed; // 初期の移動速度を設定
-        originalGravityScale = rb.gravityScale; // 初期の重力スケールを設定
+        _originalMoveSpeed = moveSpeed; // 初期の移動速度を設定
+        _originalGravityScale = rb.gravityScale; // 初期の重力スケールを設定
     }
 
     private void Update()
@@ -41,7 +41,7 @@ public class PlayerMoveController : MonoBehaviour
         }
 
         // スペースキーを押したらジャンプする
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
         {
             Jump();
         }
@@ -49,9 +49,9 @@ public class PlayerMoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        isGrounded = CheckGround();
+        _isGrounded = CheckGround();
 
-        if (isGrounded || horizontalInput != 0)
+        if (_isGrounded || horizontalInput != 0)
         {
             // 移動方向に速度を適用
             rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
@@ -78,12 +78,12 @@ public class PlayerMoveController : MonoBehaviour
     public void SetMoveSpeed(float multiplier)
     {
         // 移動速度を倍率で変更する
-        moveSpeed = originalMoveSpeed * multiplier;
+        moveSpeed = _originalMoveSpeed * multiplier;
     }
 
     public void SetGravityScale(float multiplier)
     {
         // 落下速度を倍率で変更する
-        rb.gravityScale = originalGravityScale * multiplier;
+        rb.gravityScale = _originalGravityScale * multiplier;
     }
 }

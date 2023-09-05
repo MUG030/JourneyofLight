@@ -5,7 +5,7 @@ using UnityEngine;
 public class LifeParticle : MonoBehaviour
 {
     // このスクリプトをアタッチしたParticleSystem
-    private ParticleSystem particleSystem;
+    private ParticleSystem _particleSystem;
 
     // Offsetとして使用するGameObject
     public GameObject offsetObject;
@@ -13,7 +13,7 @@ public class LifeParticle : MonoBehaviour
     private void Start()
     {
         // ParticleSystemコンポーネントを取得
-        particleSystem = GetComponent<ParticleSystem>();
+        _particleSystem = GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -21,11 +21,13 @@ public class LifeParticle : MonoBehaviour
         // OffsetObjectが指定されている場合、その座標をOffsetとして使用
         if (offsetObject != null)
         {
-            var velocityOverLifetime = particleSystem.velocityOverLifetime;
+            var velocityOverLifetime = _particleSystem.velocityOverLifetime;
 
+            // 各軸の速度を設定
             velocityOverLifetime.x = new ParticleSystem.MinMaxCurve(offsetObject.transform.position.x);
             velocityOverLifetime.y = new ParticleSystem.MinMaxCurve(offsetObject.transform.position.y);
             velocityOverLifetime.z = new ParticleSystem.MinMaxCurve(offsetObject.transform.position.z);
         }
     }
+
 }

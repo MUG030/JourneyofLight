@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseFollow : MonoBehaviour
 {
-    [SerializeField] private float followSpeed = 5.0f;
+    [SerializeField] private float _followSpeed = 5.0f;
 
     private void Update()
     {
@@ -12,6 +12,6 @@ public class MouseFollow : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
         // プレイヤーの位置をマウスの位置に近づける
-        transform.position = Vector3.MoveTowards(transform.position, mousePosition, followSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, mousePosition, _followSpeed * Time.deltaTime);
     }
 }
