@@ -41,6 +41,7 @@ public class CollectItemManager : MonoBehaviour
             if (collectItem != null)
             {
                 itemList.Add(collectItem);
+                collectItem.Collect();
             }
         }
     }

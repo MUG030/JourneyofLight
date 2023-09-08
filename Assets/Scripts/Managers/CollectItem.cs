@@ -21,15 +21,15 @@ public class CollectItem : MonoBehaviour
 
     //プレイヤーにどの程度近づいたら回収したことにするか
     [SerializeField]
-    private float _collectDistance = 0.3f;
+    private float _collectDistance = 0.01f;
 
     private float _timer = 0.0f;
     private bool _isCollect = false;
 
     private void Start()
     {
-        //初手は非表示にしておく
-        this.gameObject.SetActive(false);
+        /*初手は非表示にしておく
+        this.gameObject.SetActive(false);*/
     }
 
     private void Update()
@@ -54,12 +54,13 @@ public class CollectItem : MonoBehaviour
         //プレイヤーに向かって進ませる
         transform.position = Vector3.MoveTowards(transform.position, _playerObject.transform.position, _speed);
 
-        //特定の距離まで近づいたら回収完了
+        /*特定の距離まで近づいたら回収完了
         var diff = _playerObject.transform.position - transform.position;
         if (diff.magnitude < _collectDistance)
         {
-            FinishCollect();
-        }
+            Debug.Log("近づいた");
+            //FinishCollect();
+        }*/
     }
 
     /// <summary>
@@ -68,17 +69,6 @@ public class CollectItem : MonoBehaviour
     public void Drop()
     {
         Debug.Log("Drop");
-        //ランダムなObjectを2～4個の範囲で出現させる
-        var random = Random.Range(2, 5);
-        for (int i = 0; i < random; i++)
-        {
-            //ランダムな位置に出現させる
-            var randomPosition = new Vector3(Random.Range(-1.0f, 1.0f), 0.0f, Random.Range(-1.0f, 1.0f));
-            var item = Instantiate(this.gameObject, this.transform.position + randomPosition, Quaternion.identity);
-            item.GetComponent<CollectItem>().Collect();
-        }
-
-        this.gameObject.SetActive(true);
     }
 
     /// <summary>
@@ -86,6 +76,8 @@ public class CollectItem : MonoBehaviour
     /// </summary>
     public void Collect()
     {
+        Debug.Log("Collect");
+
         _timer = 0.0f;
         _isCollect = true;
 
@@ -98,7 +90,10 @@ public class CollectItem : MonoBehaviour
     /// </summary>
     public void FinishCollect()
     {
+        Debug.Log("FinishCollect");
         _isCollect = false;
+        Destroy(this.gameObject);
+
         this.gameObject.SetActive(false);
 
         //もし回収完了のタイミングで処理をしたい場合はここに処理を追加する

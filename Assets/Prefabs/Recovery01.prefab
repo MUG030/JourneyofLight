@@ -165,4 +165,4 @@ MonoBehaviour:
   _delayTimer: 0.5
   _maxTimer: 10
   _speed: 0.4
-  _collectDistance: 0.3
+  _collectDistance: 0.01
