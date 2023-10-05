@@ -5,10 +5,33 @@ using UnityEngine;
 public class MobTouch : MonoBehaviour
 {
     [SerializeField] private GameObject guidObject;
+    bool moblost = false;
+    public CollectItemManager collectItemManager;
 
     private void Start()
     {
         guidObject.SetActive(false);
+        
+    }
+
+    private void Update()
+    {
+        if (moblost && Input.GetKeyDown(KeyCode.Q))
+        {
+            // 自身のTransformコンポーネントを取得
+            Transform myTransform = transform;
+
+            // 自身の座標を取得
+            Vector3 myPosition = myTransform.position;
+
+            Debug.Log("いつでもお前を浄化できるんだよぉ");
+            Destroy(gameObject);
+            int itemCount = Random.Range(2, 9); // 2~8個のランダムな数
+            for (int i = 0; i < itemCount; i++)
+            {
+                collectItemManager.SpawnRandomItem(myPosition);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,6 +39,7 @@ public class MobTouch : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             guidObject.SetActive(true);
+            moblost = true;
         }
     }
 
@@ -24,6 +48,7 @@ public class MobTouch : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             guidObject.SetActive(false);
+            moblost = false;
         }
     }
 }

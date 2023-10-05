@@ -8,54 +8,21 @@ public class CollectItemManager : MonoBehaviour
     public List<GameObject> itemPrefabs = new List<GameObject>();
     // アイテム生成後のPrefabリスト
     private List<CollectItem> itemList = new List<CollectItem>();
-
-    private void Update()
-    {
-        // Qキーが押されたときにランダムに2~8個のアイテムを生成
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            int itemCount = Random.Range(2, 9); // 2~8個のランダムな数
-            for (int i = 0; i < itemCount; i++)
-            {
-                SpawnRandomItem();
-            }
-        }
-
-        // Rキーが押されたときに生成したアイテムのDrop関数を呼び出す
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            CallDropFunctionOnItems();
-        }
-    }
+    // アイテム生成場所の指定
+    [SerializeField] private GameObject _mobobject;
 
     // アイテムが生成されるときにリストに追加
-    private void SpawnRandomItem()
+    public void SpawnRandomItem(Vector3 selfPosition)
     {
         if (itemPrefabs.Count > 0)
         {
             int randomIndex = Random.Range(0, itemPrefabs.Count);
-            GameObject newItem = Instantiate(itemPrefabs[randomIndex], transform.position, Quaternion.identity);
 
-            // 新しいアイテムが持っているCollectItemコンポーネントを取得してリストに追加
-            CollectItem collectItem = newItem.GetComponent<CollectItem>();
-            if (collectItem != null)
-            {
-                itemList.Add(collectItem);
-                collectItem.Collect();
-            }
-        }
-    }
+            // 新しいアイテムの生成位置を計算する
+            Vector3 spawnPosition = new Vector3(selfPosition.x, selfPosition.y + 10, selfPosition.z);
 
-    // Rキーが押されたときにリスト内のアイテムにアクセス
-    private void CallDropFunctionOnItems()
-    {
-        foreach (CollectItem collectItem in itemList)
-        {
-            // Drop関数を持っている場合にのみ呼び出す
-            if (collectItem != null)
-            {
-                collectItem.Drop();
-            }
+            // アイテムを指定した位置に生成
+            GameObject newItem = Instantiate(itemPrefabs[randomIndex], spawnPosition, Quaternion.identity);
         }
     }
 }
