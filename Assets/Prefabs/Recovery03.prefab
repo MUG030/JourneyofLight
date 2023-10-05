@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8038699589616958165}
   - component: {fileID: 6007988882158488298}
   - component: {fileID: 7566564139848564441}
-  - component: {fileID: 4192590711888269005}
+  - component: {fileID: 588585888176696932}
   m_Layer: 0
   m_Name: Recovery03
   m_TagString: Untagged
@@ -149,24 +149,20 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &4192590711888269005
+  m_Constraints: 0
+--- !u!114 &588585888176696932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8906430699066968091}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a239eeb733ba9748970894d001c3713, type: 3}
+  m_Script: {fileID: 11500000, guid: 9af417b84cf29495591c977b05929539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerObject: {fileID: 8428616590194877955, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
-  _delayTimer: 0.5
-  _maxTimer: 10
-  _speed: 0.4
-  _collectDistance: 0.01
+  lifeTime: 0.5
 --- !u!1 &9051091461889786447
 GameObject:
   m_ObjectHideFlags: 0

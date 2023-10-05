@@ -8,7 +8,6 @@ public class HPBar : MonoBehaviour
     //最大HPと現在のHP。
     int maxHp = 155;
     int currentHp;
-    //Sliderを入れる
     public Slider slider;
 
     void Start()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 17071510280525740}
   - component: {fileID: 6771588134457689743}
   - component: {fileID: 176734643781821805}
-  - component: {fileID: 4389944769158794042}
+  - component: {fileID: 2371775000361008822}
   m_Layer: 0
   m_Name: Recovery02
   m_TagString: Untagged
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &176734643781821805
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,23 +150,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.18
---- !u!114 &4389944769158794042
+--- !u!114 &2371775000361008822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3548536825659517730}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a239eeb733ba9748970894d001c3713, type: 3}
+  m_Script: {fileID: 11500000, guid: 9af417b84cf29495591c977b05929539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerObject: {fileID: 8428616590194877955, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
-  _delayTimer: 0.5
-  _maxTimer: 10
-  _speed: 0.4
-  _collectDistance: 0.01
+  lifeTime: 0.5
 --- !u!1 &7585954245349925379
 GameObject:
   m_ObjectHideFlags: 0

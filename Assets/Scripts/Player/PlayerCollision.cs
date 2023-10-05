@@ -23,9 +23,9 @@ public class PlayerCollision : MonoBehaviour
         var target = col.GetComponent<IRecoverable>();
         if (target != null)
         {
+            Debug.Log("体力を回復した");
             int RecoveryNum = target.AddRecovery();
             hpBar.Recovery(RecoveryNum);
-            Debug.Log("体力を回復した");
         }
     }
 }
