@@ -24,12 +24,23 @@ public class HPBar : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             Damage(10);
+        } else if (Input.GetKeyDown(KeyCode.J))
+        {
+            Recovery(10);
         }
     }
 
     public void Damage(int damage)
     {
         currentHp = currentHp - damage;
+
+        slider.value = (float)currentHp / (float)maxHp;
+        Debug.Log("slider.value : " + slider.value);
+    }
+
+    public void Recovery(int recovery)
+    {
+        currentHp = currentHp + recovery;
 
         slider.value = (float)currentHp / (float)maxHp;
         Debug.Log("slider.value : " + slider.value);

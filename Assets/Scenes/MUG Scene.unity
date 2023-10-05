@@ -1352,7 +1352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &784946549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11638,6 +11638,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4912113407691895151, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
+      propertyPath: m_ForceMagnitude
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 8428616590194877955, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -11722,6 +11726,10 @@ PrefabInstance:
     - target: {fileID: 8546765050589363236, guid: 45643b88d1da66248a8f4fcfd91998a2, type: 3}
       propertyPath: m_Name
       value: Rainsystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546765050589363236, guid: 45643b88d1da66248a8f4fcfd91998a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8546765050589363236, guid: 45643b88d1da66248a8f4fcfd91998a2, type: 3}
       propertyPath: m_TagString
