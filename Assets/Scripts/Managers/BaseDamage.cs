@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecoveryItem : MonoBehaviour, IRecoverable
+public class BaseDamage : MonoBehaviour, IDamageable
 {
-    public int AddRecovery()
+    public int AddDamage()
     {
-        Destroy(gameObject);
         return 10;
     }
 }

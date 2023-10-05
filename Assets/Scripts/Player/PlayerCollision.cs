@@ -14,12 +14,16 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        var target = col.GetComponent<IRecoverable>();
-        if (target != null)
+        var recoverytarget = col.GetComponent<IRecoverable>();
+        var enemytarget = col.GetComponent<IDamageable>();
+        if (recoverytarget != null)
         {
-            Debug.Log("体力を回復した");
-            int RecoveryNum = target.AddRecovery();
+            int RecoveryNum = recoverytarget.AddRecovery();
             hpBar.Recovery(RecoveryNum);
+        } else if (enemytarget != null)
+        {
+            int DamageNum = enemytarget.AddDamage();
+            hpBar.Damage(DamageNum);
         }
     }
 }

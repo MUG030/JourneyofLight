@@ -32,6 +32,10 @@ public class HPBar : MonoBehaviour
     public void Damage(int damage)
     {
         currentHp = currentHp - damage;
+        if (currentHp <= 0)
+        {
+            currentHp = 0;
+        }
 
         slider.value = (float)currentHp / (float)maxHp;
         Debug.Log("slider.value : " + slider.value);
@@ -40,6 +44,10 @@ public class HPBar : MonoBehaviour
     public void Recovery(int recovery)
     {
         currentHp = currentHp + recovery;
+        if (currentHp >= maxHp)
+        {
+            currentHp = maxHp;
+        }
 
         slider.value = (float)currentHp / (float)maxHp;
         Debug.Log("slider.value : " + slider.value);

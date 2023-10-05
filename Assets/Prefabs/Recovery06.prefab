@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5503676966771488620}
   - component: {fileID: 8419629294269902854}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 3786017159298521934}
   - component: {fileID: 136506943518249052}
   - component: {fileID: 3859773922236837617}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Recovery06
   m_TagString: Untagged
   m_Icon: {fileID: 0}

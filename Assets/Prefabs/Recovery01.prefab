@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4012656376190111875}
   - component: {fileID: 6806481056188292726}
   - component: {fileID: 3362469133889307308}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7414894973365540232}
   - component: {fileID: 4253117162191829487}
   - component: {fileID: 1236157173010809547}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Recovery01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1129,6 +1129,7 @@ GameObject:
   - component: {fileID: 698554553}
   - component: {fileID: 698554552}
   - component: {fileID: 698554556}
+  - component: {fileID: 698554557}
   m_Layer: 0
   m_Name: TemMob
   m_TagString: Untagged
@@ -1168,11 +1169,11 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03453183, y: 0.17265916}
+  m_Offset: {x: -0.03453183, y: 0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1333334, y: 2.1333334}
+    oldSize: {x: 1.8285714, y: 1.8285714}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1249,7 +1250,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0efed0669c63b8c41aad82ae93b4381a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 234f114009cfd4881aaa50f6b73d8976, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1269,7 +1270,7 @@ Transform:
   m_GameObject: {fileID: 698554551}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.34, y: -4.15, z: 0}
+  m_LocalPosition: {x: 3.34, y: -3.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1289,6 +1290,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guidObject: {fileID: 47282196}
+--- !u!114 &698554557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698554551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7b542a0d9cf41ad8921d40009d20fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &784946548
 GameObject:
   m_ObjectHideFlags: 0
@@ -6446,6 +6459,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1232949170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3115898869690995261, guid: a8fdeef61c76a4af7922c466357a80c7, type: 3}
+  m_PrefabInstance: {fileID: 8936770780171163367}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc1ead37a1844eb8bd3176ca7d3a938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1269895878
 GameObject:
   m_ObjectHideFlags: 0
@@ -11543,6 +11567,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2411468124136888427, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 1232949170}
     - target: {fileID: 2925127650330032953, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.224931
