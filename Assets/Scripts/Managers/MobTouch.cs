@@ -18,19 +18,25 @@ public class MobTouch : MonoBehaviour
     {
         if (moblost && Input.GetKeyDown(KeyCode.Q))
         {
-            // 自身のTransformコンポーネントを取得
-            Transform myTransform = transform;
+            SpawnItem();
+        }
+    }
 
-            // 自身の座標を取得
-            Vector3 myPosition = myTransform.position;
+    private void SpawnItem()
+    {
+        // 自身のTransformコンポーネントを取得
+        Transform myTransform = transform;
 
-            Debug.Log("いつでもお前を浄化できるんだよぉ");
-            Destroy(gameObject);
-            int itemCount = Random.Range(2, 9); // 2~8個のランダムな数
-            for (int i = 0; i < itemCount; i++)
-            {
-                collectItemManager.SpawnRandomItem(myPosition);
-            }
+        // 自身の座標を取得
+        Vector3 myPosition = myTransform.position;
+
+        Debug.Log("いつでもお前を浄化できるんだよぉ");
+        Destroy(gameObject);
+        int itemCount = Random.Range(2, 8); // 2~8個のランダムな数
+        Debug.Log(itemCount);
+        for (int i = 0; i < itemCount; i++)
+        {
+            collectItemManager.SpawnRandomItem(myPosition);
         }
     }
 
