@@ -7,29 +7,37 @@ public class HPBar : MonoBehaviour
 {
     //最大HPと現在のHP。
     int maxHp = 155;
-    int currentHp;
+    float currentHp;
     public Slider slider;
+    private bool _isUmbrellaOpen = false; // 傘が開いているかどうかのフラグ
 
     void Start()
     {
         slider.value = 1;
         currentHp = maxHp;
-        Debug.Log("Start currentHp : " + currentHp);
+        // 5秒ごとにDamageメソッドを呼び出す
+        InvokeRepeating("CallDamage", 0f, 1f);
+    }
+
+    private void CallDamage()
+    {
+        if (!_isUmbrellaOpen)
+        {
+            Damage(0.1f);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        // シフトキーを押したら傘を切り替える
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Damage(10);
-        } else if (Input.GetKeyDown(KeyCode.J))
-        {
-            Recovery(10);
+            _isUmbrellaOpen = !_isUmbrellaOpen;
         }
     }
 
-    public void Damage(int damage)
+    public void Damage(float damage)
     {
         currentHp = currentHp - damage;
         if (currentHp <= 0)

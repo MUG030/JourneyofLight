@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BaseDamage : MonoBehaviour, IDamageable
 {
-    public int AddDamage()
+    public float baseDamage = 5.0f;
+
+    public float AddDamage()
     {
-        return 10;
+        return baseDamage;
     }
 }
