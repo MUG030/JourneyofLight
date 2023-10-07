@@ -15,7 +15,7 @@ public class Light2DAnimation : MonoBehaviour
     private float _attackSpeed = 1f;
     private float currentValue;
     private bool isIncreasing = true;
-    public bool isAttack = false;
+    public static bool isAttack = false;
 
     private void Start()
     {
@@ -27,8 +27,9 @@ public class Light2DAnimation : MonoBehaviour
     private void Update()
     {
         // Xキーが押されたらInnerRadiusを増加させる
-        if (Input.GetKeyDown(KeyCode.X))
+        if (!isAttack && Input.GetKeyDown(KeyCode.X))
         {
+            currentValue = _minValue;
             _attackSpeed = _animationSpeed * _attackrate;
             isAttack = true;
             isIncreasing = true;
