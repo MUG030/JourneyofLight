@@ -46,7 +46,6 @@ public class HPBar : MonoBehaviour
         }
 
         slider.value = currentHp / (float)maxHp;
-        // Debug.Log("slider.value : " + slider.value);
     }
 
     public void Recovery(int recovery)
