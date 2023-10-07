@@ -6,8 +6,6 @@ public class CollectItemManager : MonoBehaviour
 {
     // アイテムのPrefabリスト
     public List<GameObject> itemPrefabs = new List<GameObject>();
-    // アイテム生成後のPrefabリスト
-    private List<CollectItem> itemList = new List<CollectItem>();
     // インスペクターから設定するランダムな色のリスト
     public List<Color> randomColors = new List<Color>();
 

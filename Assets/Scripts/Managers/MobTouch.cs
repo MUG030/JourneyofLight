@@ -16,7 +16,7 @@ public class MobTouch : MonoBehaviour
 
     private void Update()
     {
-        if (moblost && Input.GetKeyDown(KeyCode.Q))
+        if (moblost && Input.GetKeyDown(KeyCode.Z))
         {
             SpawnItem();
         }
