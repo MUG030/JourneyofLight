@@ -22,7 +22,7 @@ public class PlayerCollision : MonoBehaviour
             hpBar.Recovery(RecoveryNum);
         } else if (enemytarget != null)
         {
-            int DamageNum = enemytarget.AddDamage();
+            float DamageNum = enemytarget.AddDamage();
             hpBar.Damage(DamageNum);
         }
     }
