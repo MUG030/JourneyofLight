@@ -7,11 +7,14 @@ public class PlayerMoveController : MonoBehaviour
     public float moveSpeed = 5f; // プレイヤーの移動速度
     public float jumpForce = 10f; // ジャンプ力
     public float groundCheckDistance = 0.1f; // 地面判定の距離
+    public float knockBackPower; //ノックバック力
     float horizontalInput = 0.0f;
     public LayerMask groundLayer; // 地面と判定するレイヤーマスク
 
     private float _originalMoveSpeed; // 初期の移動速度
     private float _originalGravityScale; // 初期の重力スケール
+
+    private float _controlLoseTime;
 
     // 地面に接触しているかを判定
     private bool _isGrounded;
@@ -24,12 +27,20 @@ public class PlayerMoveController : MonoBehaviour
 
         _originalMoveSpeed = moveSpeed; // 初期の移動速度を設定
         _originalGravityScale = rb.gravityScale; // 初期の重力スケールを設定
+        _controlLoseTime = 0f;
     }
 
     private void Update()
     {
+        bool isControl = _controlLoseTime <= 0;
+
         // 左右の入力を取得
         horizontalInput = Input.GetAxis("Horizontal");
+
+        if (!isControl)
+        {
+            horizontalInput = 0f;
+        }
 
         if (horizontalInput > 0.0f)
         {
@@ -41,17 +52,28 @@ public class PlayerMoveController : MonoBehaviour
         }
 
         // スペースキーを押したらジャンプする
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded && isControl)
         {
             Jump();
+        }
+
+        if (0f < _controlLoseTime)
+        {
+            _controlLoseTime -= Time.deltaTime;
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 
     private void FixedUpdate()
     {
+        bool isControl = _controlLoseTime <= 0;
         _isGrounded = CheckGround();
 
-        if (_isGrounded || horizontalInput != 0)
+        if ((_isGrounded || horizontalInput != 0) && isControl)
         {
             // 移動方向に速度を適用
             rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
@@ -85,5 +107,26 @@ public class PlayerMoveController : MonoBehaviour
     {
         // 落下速度を倍率で変更する
         rb.gravityScale = _originalGravityScale * multiplier;
+    }
+
+    public void KnockBack (Vector2 direction)
+    {
+        Debug.Log(direction);
+        if (0f > direction.x)
+        {
+            direction.x = -1.0f;
+        } else if (0f < direction.x)
+        {
+            direction.x = 1.0f;
+        }
+        rb.velocity = Vector2.zero;
+        // x軸に沿ったノックバックを実行する
+        Vector2 knockbackForce = new Vector2(direction.x * knockBackPower, 5f);
+
+        Debug.Log(knockbackForce);
+
+        // ノックバック力を適用
+        rb.velocity = knockbackForce;
+        _controlLoseTime = 1f;
     }
 }
