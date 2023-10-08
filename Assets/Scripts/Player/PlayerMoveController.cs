@@ -111,7 +111,6 @@ public class PlayerMoveController : MonoBehaviour
 
     public void KnockBack (Vector2 direction)
     {
-        Debug.Log(direction);
         if (0f > direction.x)
         {
             direction.x = -1.0f;
@@ -122,8 +121,6 @@ public class PlayerMoveController : MonoBehaviour
         rb.velocity = Vector2.zero;
         // x軸に沿ったノックバックを実行する
         Vector2 knockbackForce = new Vector2(direction.x * knockBackPower, 5f);
-
-        Debug.Log(knockbackForce);
 
         // ノックバック力を適用
         rb.velocity = knockbackForce;
