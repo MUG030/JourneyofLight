@@ -611,6 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 3115898869690995261, guid: a8fdeef61c76a4af7922c466357a80c7, type: 3}
+  playerMoveController: {fileID: 1162134615930528659}
 --- !u!50 &851606892387728100
 Rigidbody2D:
   serializedVersion: 4
@@ -914,6 +915,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 8
   groundCheckDistance: 1.5
+  knockBackPower: 2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
