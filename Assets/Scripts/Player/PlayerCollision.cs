@@ -42,7 +42,7 @@ public class PlayerCollision : MonoBehaviour
     public async UniTask DamageJudge()
     {
         isDamage = !isDamage;
-        await UniTask.Delay(TimeSpan.FromSeconds(1.2));
+        await UniTask.Delay(TimeSpan.FromSeconds(1.5));
         isDamage = !isDamage;
     }
 }

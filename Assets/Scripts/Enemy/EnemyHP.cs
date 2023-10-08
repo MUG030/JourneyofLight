@@ -37,7 +37,7 @@ public class EnemyHP : MonoBehaviour
         }
     }
 
-    public void Damage(float damage)
+    public void EnemyDamage(float damage)
     {
         currentHp = currentHp - damage;
         Debug.Log(currentHp);
@@ -45,12 +45,12 @@ public class EnemyHP : MonoBehaviour
 
     private async void OnTriggerEnter2D(Collider2D col)
     {
-        var attacktarget = col.GetComponent<IDamageable>();
+        var attacktarget = col.GetComponent<IEDamageable>();
         if (attacktarget != null)
         {
             if (isDamage) return;
-            float DamageNum = attacktarget.AddDamage();
-            Damage(DamageNum);
+            float DamageNum = attacktarget.AddEDamage();
+            EnemyDamage(DamageNum);
 
             // 自分の位置と接触してきたオブジェクトの位置とを計算して、距離と方向を出して正規化(速度ベクトルを算出)
             Vector2 distination = (transform.position - col.transform.position).normalized;

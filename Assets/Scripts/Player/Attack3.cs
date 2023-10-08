@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack3 : MonoBehaviour, IDamageable
+public class Attack3 : MonoBehaviour, IEDamageable
 {
-    public float AddDamage()
+    public float AddEDamage()
     {
         return 1.0f;
     }
