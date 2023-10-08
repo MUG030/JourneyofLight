@@ -37,7 +37,7 @@ public class PlayerMoveController : MonoBehaviour
         // 左右の入力を取得
         horizontalInput = Input.GetAxis("Horizontal");
 
-        if (!isControl)
+        if (!isControl || AttackAction.attackCommand)
         {
             horizontalInput = 0f;
         }
@@ -52,7 +52,7 @@ public class PlayerMoveController : MonoBehaviour
         }
 
         // スペースキーを押したらジャンプする
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded && isControl)
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded && (isControl || !AttackAction.attackCommand))
         {
             Jump();
         }
@@ -73,7 +73,7 @@ public class PlayerMoveController : MonoBehaviour
         bool isControl = _controlLoseTime <= 0;
         _isGrounded = CheckGround();
 
-        if ((_isGrounded || horizontalInput != 0) && isControl)
+        if ((_isGrounded || horizontalInput != 0) && (isControl || !AttackAction.attackCommand))
         {
             // 移動方向に速度を適用
             rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);

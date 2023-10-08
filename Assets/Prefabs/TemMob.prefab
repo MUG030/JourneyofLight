@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 7942262573440447219}
   - component: {fileID: 2441170394116602547}
   - component: {fileID: 809212474863261259}
-  - component: {fileID: 5184014081520675768}
   m_Layer: 0
   m_Name: TemMob
   m_TagString: Untagged
@@ -259,16 +258,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guidObject: {fileID: 1404249481552331036}
   collectItemManager: {fileID: 4714723103354200335, guid: 013b3d7e4111c4cacaf7efe65a2d7fd5, type: 3}
---- !u!114 &5184014081520675768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869614323127210256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7b542a0d9cf41ad8921d40009d20fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 5

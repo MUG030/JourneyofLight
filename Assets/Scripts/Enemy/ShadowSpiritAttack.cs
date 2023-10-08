@@ -21,7 +21,7 @@ public class ShadowSpiritAttack : MonoBehaviour
     private async UniTask OffActive()
     {
         shadowAtk = true;
-        await UniTask.Delay(TimeSpan.FromSeconds(0.5));
+        await UniTask.Delay(TimeSpan.FromSeconds(1.5));
         shadowAttack.SetActive(false);
         shadowAtk = false;
     }
