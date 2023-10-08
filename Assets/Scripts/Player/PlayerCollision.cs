@@ -28,7 +28,7 @@ public class PlayerCollision : MonoBehaviour
             hpBar.Recovery(RecoveryNum);
         } else if (enemytarget != null)
         {
-            if (isDamage) return;
+            if (isDamage || AttackAction.attackCommand) return;
             float DamageNum = enemytarget.AddDamage();
             hpBar.Damage(DamageNum);
 

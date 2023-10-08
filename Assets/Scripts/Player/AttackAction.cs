@@ -10,7 +10,7 @@ public class AttackAction : MonoBehaviour
     [SerializeField] private GameObject _attackObject2;
     [SerializeField] private GameObject _attackObject3;
 
-    public static bool attackCommand = true;
+    public static bool attackCommand = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +30,7 @@ public class AttackAction : MonoBehaviour
 
     private async UniTask ActivateAttackObjectsAsync()
     {
+        attackCommand = !attackCommand;
         _attackObject1.SetActive(true);
 
         await UniTask.Delay(TimeSpan.FromSeconds(1.3));
@@ -42,5 +43,6 @@ public class AttackAction : MonoBehaviour
         _attackObject3.SetActive(false);
         _attackObject2.SetActive(false);
         _attackObject1.SetActive(false);
+        attackCommand = !attackCommand;
     }
 }

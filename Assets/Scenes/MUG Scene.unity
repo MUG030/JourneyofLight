@@ -11596,7 +11596,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2013122171}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b9e9b2bbe266f3f4896b19bca7118790, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -11713,6 +11713,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
+  knockBackPower: 0
+  isDamage: 0
+  playerMoveController: {fileID: 0}
 --- !u!1001 &5846189696953317685
 PrefabInstance:
   m_ObjectHideFlags: 0
