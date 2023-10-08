@@ -18,7 +18,7 @@ public class RainFollowPlayer : MonoBehaviour
         // プレイヤーの位置に合わせて雨のParticleSystemを移動する
         if (playerTransform != null)
         {
-            transform.position = new Vector2(playerTransform.position.x, playerTransform.position.y + 10);
+            transform.position = new Vector2(playerTransform.position.x, 20);
         }
     }
 }
