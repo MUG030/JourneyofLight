@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Rain
   - Ramp
+  - SoundManager
   layers:
   - Default
   - TransparentFX
