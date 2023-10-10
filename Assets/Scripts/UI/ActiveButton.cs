@@ -22,4 +22,9 @@ public class ActiveButton : MonoBehaviour
     {
         setObject.SetActive(true);
     }
+
+    public void OffActive()
+    {
+        setObject.SetActive(false);
+    }
 }
