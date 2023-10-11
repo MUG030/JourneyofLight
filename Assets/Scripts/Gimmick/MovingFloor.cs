@@ -79,6 +79,7 @@ public class MovingBlock : MonoBehaviour
             collision.transform.SetParent(transform);
             if (isMoveWhenOn)
             {
+                Debug.Log("test");
                 //乗った時に動くフラグON
                 isCanMove = true;   //移動フラグを立てる
             }

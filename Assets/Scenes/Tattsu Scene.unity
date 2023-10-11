@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 306320884}
   - component: {fileID: 306320882}
   - component: {fileID: 306320881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovingFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 87.516, y: -6.11, z: 0}
-  m_LocalScale: {x: 5, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -358,8 +358,8 @@ MonoBehaviour:
   moveY: 3
   times: 5
   wait: 2
-  isMoveWhenOn: 0
-  isCanMove: 1
+  isMoveWhenOn: 1
+  isCanMove: 0
 --- !u!1001 &331907524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -370,11 +370,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2925127650330032953, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.568976
+      value: 74.46
       objectReference: {fileID: 0}
     - target: {fileID: 2925127650330032953, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5232316
+      value: -2.45
       objectReference: {fileID: 0}
     - target: {fileID: 2925127650330032953, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -601,7 +601,7 @@ Transform:
   m_GameObject: {fileID: 401159950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0526128, y: -1.02323, z: -10}
+  m_LocalPosition: {x: 77.184074, y: -1.9499998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39284,7 +39284,7 @@ Transform:
   m_GameObject: {fileID: 826558290}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.013771, y: -1.0232314, z: -10}
+  m_LocalPosition: {x: 77.184074, y: -1.9499998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
