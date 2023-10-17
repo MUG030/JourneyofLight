@@ -1,13 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class LostSpiritMove : MonoBehaviour
 {
-    public float speed = 3.0f;          // ˆÚ“®‘¬“x
-    public bool isToRight = false;      // true=‰EŒü‚«@false=¶Œü‚«
-    public float revTime = 0;           // ”½“]ŠÔ
-    public LayerMask groundLayer;       // ’n–ÊƒŒƒCƒ„[
+    public float speed = 3.0f;          // ç§»å‹•é€Ÿåº¦
+    public bool isToRight = false;      // true=å³å‘ãã€€false=å·¦å‘ã
+    public float revTime = 0;           // åè»¢æ™‚é–“
+    public LayerMask groundLayer;       // åœ°é¢ãƒ¬ã‚¤ãƒ¤ãƒ¼
 
     float time = 0;
 
@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     {
         if (isToRight)
         {
-            transform.localScale = new Vector2(-1, 1);// Œü‚«‚Ì•ÏX
+            transform.localScale = new Vector2(-1, 1);// å‘ãã®å¤‰æ›´
         }
     }
 
@@ -28,15 +28,15 @@ public class EnemyController : MonoBehaviour
             time += Time.deltaTime;
             if (time >= revTime)
             {
-                isToRight = !isToRight;     //ƒtƒ‰ƒO‚ğ”½“]‚³‚¹‚é
-                time = 0;                   //ƒ^ƒCƒ}[‚ğ‰Šú‰»
+                isToRight = !isToRight;     //ãƒ•ãƒ©ã‚°ã‚’åè»¢ã•ã›ã‚‹
+                time = 0;                   //ã‚¿ã‚¤ãƒãƒ¼ã‚’åˆæœŸåŒ–
                 if (isToRight)
                 {
-                    transform.localScale = new Vector2(-1, 1);  // Œü‚«‚Ì•ÏX
+                    transform.localScale = new Vector2(-1, 1);  // å‘ãã®å¤‰æ›´
                 }
                 else
                 {
-                    transform.localScale = new Vector2(1, 1);   // Œü‚«‚Ì•ÏX
+                    transform.localScale = new Vector2(1, 1);   // å‘ãã®å¤‰æ›´
                 }
             }
         }
@@ -44,16 +44,16 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // ’nã”»’è
-        bool onGround = Physics2D.CircleCast(transform.position, //”­ËˆÊ’u
-                                             0.5f,               //‰~‚Ì”¼Œa
-                                             Vector2.down,       //”­Ë•ûŒü
-                                             0.5f,               //”­Ë‹——£
-                                             groundLayer);       //ŒŸo‚·‚éƒŒƒCƒ„[
+        // åœ°ä¸Šåˆ¤å®š
+        bool onGround = Physics2D.CircleCast(transform.position, //ç™ºå°„ä½ç½®
+                                             0.5f,               //å††ã®åŠå¾„
+                                             Vector2.down,       //ç™ºå°„æ–¹å‘
+                                             0.5f,               //ç™ºå°„è·é›¢
+                                             groundLayer);       //æ¤œå‡ºã™ã‚‹ãƒ¬ã‚¤ãƒ¤ãƒ¼
         if (onGround)
         {
-            // ‘¬“x‚ğXV‚·‚é
-            // Rigidbody2D ‚ğæ‚Á‚Ä‚­‚é
+            // é€Ÿåº¦ã‚’æ›´æ–°ã™ã‚‹
+            // Rigidbody2D ã‚’å–ã£ã¦ãã‚‹
             Rigidbody2D rbody = GetComponent<Rigidbody2D>();
             if (isToRight)
             {
@@ -66,18 +66,18 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    // ÚG
+    // æ¥è§¦
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isToRight = !isToRight;     //ƒtƒ‰ƒO‚ğ”½“]‚³‚¹‚é
-        time = 0;                   //ƒ^ƒCƒ}[‚ğ‰Šú‰»
+        isToRight = !isToRight;     //ãƒ•ãƒ©ã‚°ã‚’åè»¢ã•ã›ã‚‹
+        time = 0;                   //ã‚¿ã‚¤ãƒãƒ¼ã‚’åˆæœŸåŒ–
         if (isToRight)
         {
-            transform.localScale = new Vector2(-1, 1); // Œü‚«‚Ì•ÏX
+            transform.localScale = new Vector2(-1, 1); // å‘ãã®å¤‰æ›´
         }
         else
         {
-            transform.localScale = new Vector2(1, 1); // Œü‚«‚Ì•ÏX
+            transform.localScale = new Vector2(1, 1); // å‘ãã®å¤‰æ›´
         }
     }
 }
