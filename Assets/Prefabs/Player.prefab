@@ -238,6 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 162269296473531492}
   - component: {fileID: 7826360289782915181}
+  - component: {fileID: 6628364754661667375}
   m_Layer: 0
   m_Name: Ranp
   m_TagString: Ramp
@@ -313,6 +314,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6628364754661667375
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107818335323544322}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 557b0591f39ea4078a929702545811f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5672683080097916488
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpBar: {fileID: 3115898869690995261, guid: a8fdeef61c76a4af7922c466357a80c7, type: 3}
   playerMoveController: {fileID: 1162134615930528659}
+  isDamage: 0
 --- !u!50 &851606892387728100
 Rigidbody2D:
   serializedVersion: 4
