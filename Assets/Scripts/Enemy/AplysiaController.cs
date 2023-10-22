@@ -51,6 +51,7 @@ public class Aplysia : MonoBehaviour
             //待機時間経過
             if (passedTimes > delayTime)
             {
+                Debug.Log("test");
                 passedTimes = 0;        //時間を0にリセット
                 //砲弾をプレハブから作る
                 Vector2 pos = new Vector2(gateTransform.position.x,
