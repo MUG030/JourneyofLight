@@ -8,7 +8,7 @@ public class PlayerMoveController : MonoBehaviour
     public float jumpForce = 10f; // ジャンプ力
     public float groundCheckDistance = 0.1f; // 地面判定の距離
     public float knockBackPower; //ノックバック力
-    float horizontalInput = 0.0f;
+    private float horizontalInput;
     public LayerMask groundLayer; // 地面と判定するレイヤーマスク
 
     private float _originalMoveSpeed; // 初期の移動速度
@@ -20,10 +20,12 @@ public class PlayerMoveController : MonoBehaviour
     private bool _isGrounded;
 
     private Rigidbody2D rb; // プレイヤーのRigidbody2Dコンポーネント
+    private Animator animator;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         _originalMoveSpeed = moveSpeed; // 初期の移動速度を設定
         _originalGravityScale = rb.gravityScale; // 初期の重力スケールを設定
@@ -36,6 +38,10 @@ public class PlayerMoveController : MonoBehaviour
 
         // 左右の入力を取得
         horizontalInput = Input.GetAxis("Horizontal");
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+        animator.SetBool("IsWalk", _isGrounded);
+        //animator.SetBool("IsJump", true);
 
         if (!isControl || AttackAction.attackCommand)
         {
