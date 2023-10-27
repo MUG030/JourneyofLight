@@ -2,55 +2,45 @@
 
 public class ShadowStalker : MonoBehaviour
 {
-    public float moveSpeed = 5.0f; // 移動速度
-    public float stopDuration = 2.0f; // プレイヤーに当たった後の停止時間
-    public float detectionRange = 5.0f; // プレイヤーを検出する距離
-    public LayerMask playerLayer; // プレイヤーレイヤー
-
+    private Camera mainCamera;
     private Transform player;
-    private Rigidbody2D rb;
+    private float moveSpeed = 5.0f; // 移動速度
+    private float stopDuration = 2.0f; // プレイヤーに当たった後の停止時間
     private bool isChasing = false;
     private float stopTimer = 0.0f;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform; // プレイヤータグを使ってプレイヤーを検出
-        rb = GetComponent<Rigidbody2D>();
+        mainCamera = Camera.main;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        Vector3 screenPos = mainCamera.WorldToViewportPoint(transform.position);
 
-        if (!isChasing && distanceToPlayer <= detectionRange)
+        // ゲームオブジェクトが画面内にいるかをチェック
+        if (screenPos.x >= 0 && screenPos.x <= 1 && screenPos.y >= 0 && screenPos.y <= 1)
         {
+            // 画面内にいる場合の処理
             isChasing = true;
-        }
-
-        if (isChasing)
-        {
             Vector3 moveDirection = (player.position - transform.position).normalized;
-            rb.velocity = moveDirection * moveSpeed;
-        }
+            transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
 
-        if (stopTimer > 0.0f)
-        {
-            rb.velocity = Vector2.zero; // 移動を停止
-            stopTimer -= Time.deltaTime;
-            if (stopTimer <= 0.0f)
+            if (stopTimer > 0.0f)
             {
-                isChasing = true; // 停止が終了したら再びプレイヤーを追跡
+                stopTimer -= Time.deltaTime;
+                if (stopTimer <= 0.0f)
+                {
+                    isChasing = true;
+                }
             }
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        else
         {
+            // 画面外にいる場合の処理
             isChasing = false;
-            stopTimer = stopDuration; // プレイヤーに当たったら停止時間を設定
+            stopTimer = stopDuration;
         }
     }
 }
-
