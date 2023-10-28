@@ -15,17 +15,6 @@ public class BulletEnemy : MonoBehaviour
     public float minScale = 0.1f;
     public float maxScale = 1.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void GenerateBullet(Vector3 slfPos)
     {
         float randomPowerX = Random.Range(minForceX, maxForceX);

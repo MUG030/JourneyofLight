@@ -93,7 +93,11 @@ public class PlayerMoveController : MonoBehaviour
         Vector2 direction = Vector2.down;
         float distance = groundCheckDistance;
 
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(position + new Vector2(0f, 0.5f), direction, distance, groundLayer);
+
+        // レイを可視化（デバッグ目的）
+        Debug.DrawRay(position + new Vector2(0f, 0.5f), direction * distance, Color.red);
+
         return hit.collider != null;
     }
 
