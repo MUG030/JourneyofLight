@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2882098400513119650}
   - component: {fileID: 4777761786367528907}
   - component: {fileID: 4537987549960891127}
+  - component: {fileID: -2823475396741745402}
   m_Layer: 0
   m_Name: Aplysia_Mug
   m_TagString: Untagged
@@ -266,3 +267,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2823475396741745402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3776467519899444267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5c98bb4a79143fe8e7a9553ccfa1d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 4
+  knockBackPower: 0
+  enemyParticle: {fileID: 0}
+  isDamage: 0

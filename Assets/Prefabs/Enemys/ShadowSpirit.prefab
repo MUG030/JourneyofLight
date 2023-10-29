@@ -5102,8 +5102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5c98bb4a79143fe8e7a9553ccfa1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 155
+  maxHp: 10
   knockBackPower: 2
+  enemyParticle: {fileID: 0}
   isDamage: 0
 --- !u!1 &3896452637021274447
 GameObject:
