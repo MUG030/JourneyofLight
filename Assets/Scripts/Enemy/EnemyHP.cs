@@ -10,6 +10,7 @@ public class EnemyHP : MonoBehaviour
     [SerializeField] private int maxHp = 155;
     float currentHp;
     public float knockBackPower;
+    public GameObject enemyParticle;
 
     private Rigidbody2D rb;
 
@@ -35,10 +36,13 @@ public class EnemyHP : MonoBehaviour
         }
     }
 
-    public void EnemyDamage(float damage)
+    public async void EnemyDamage(float damage)
     {
         currentHp = currentHp - damage;
-        Debug.Log(currentHp);
+        if (currentHp <= 0)
+        {
+            EnemyDead();
+        }
     }
 
     private async void OnTriggerEnter2D(Collider2D col)
@@ -81,7 +85,12 @@ public class EnemyHP : MonoBehaviour
     public async UniTask DamageJudge()
     {
         isDamage = !isDamage;
-        await UniTask.Delay(TimeSpan.FromSeconds(1.2));
+        await UniTask.Delay(TimeSpan.FromSeconds(1.5));
         isDamage = !isDamage;
+    }
+
+    private void EnemyDead()
+    {
+        Destroy(gameObject);
     }
 }

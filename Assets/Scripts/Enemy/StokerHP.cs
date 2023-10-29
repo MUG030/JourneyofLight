@@ -38,7 +38,10 @@ public class StokerHP : MonoBehaviour
     public void EnemyDamage(float damage)
     {
         currentHp = currentHp - damage;
-        Debug.Log(currentHp);
+        if (currentHp <= 0)
+        {
+            EnemyDead();
+        }
     }
 
     private async void OnTriggerEnter2D(Collider2D col)
@@ -85,4 +88,10 @@ public class StokerHP : MonoBehaviour
         isDamage = !isDamage;
         rb.velocity = Vector2.zero;
     }
+
+    private void EnemyDead()
+    {
+        Destroy(gameObject);
+    }
+
 }
