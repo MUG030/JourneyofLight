@@ -200,6 +200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a5a94027c3c4011b3478f62c8c3ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 155
-  knockBackPower: 4
+  maxHp: 3
+  knockBackPower: 3
   isDamage: 0
