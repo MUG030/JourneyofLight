@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/MainScene/TitleScene.unity
+    guid: 3184f13142ae1494a9421866e7f7b37f
+  - enabled: 1
+    path: Assets/Scenes/MainScene/EpilogueScene.unity
+    guid: 1d8620d65c46e468694995fad45518cd
+  - enabled: 1
+    path: Assets/Scenes/Tattsu Scene.unity
+    guid: 3447fce33e8c1cc45be2470d0d27b48a
+  - enabled: 1
+    path: Assets/Scenes/MainScene/EndingScene.unity
+    guid: a6c7a67b810b64cd7bdf399d506993be
   m_configObjects: {}
