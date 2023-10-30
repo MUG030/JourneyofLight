@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3191003824564332343, guid: 07387d0e3d4044fd28d66a876eee9f3b, type: 3}
+  m_Sprite: {fileID: 7378631987874106700, guid: 07387d0e3d4044fd28d66a876eee9f3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 371364862682693090}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ae499f1590a2047069b66e0aa2c0714d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 035aad5cac89244e48cdd18042990740, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -139,18 +139,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004076481, y: 2.7937648}
+  m_Offset: {x: -0.017409801, y: 2.56}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.44186047, y: -0.083333336}
-    oldSize: {x: 0.5375, y: 2.7}
+    oldSize: {x: 0.47777778, y: 2.4}
     newSize: {x: 0.43, y: 2.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8092546, y: 0.26247072}
+  m_Size: {x: 2.2625904, y: 0.26247072}
   m_EdgeRadius: 0
 --- !u!1 &1967231124053226681
 GameObject:
@@ -994,12 +994,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1271002882212133893, guid: b87199361ac8f40d7b7d9724390ec3ee, type: 3}
+  m_Sprite: {fileID: 586545415817112120, guid: ee1d69d88d2314b899a44609d29e8f3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.12, y: 4.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1042,7 +1042,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.53846157, y: 0}
     oldSize: {x: 2.08, y: 2.9}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 3.12, y: 4.35}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1121,7 +1121,7 @@ Animator:
   m_GameObject: {fileID: 8428616590194877955}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b7195ffb4129e4434b9dddd6a96386f5, type: 2}
+  m_Controller: {fileID: 9100000, guid: c37bbb5cf4a6249468b49bdffe9faa38, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
