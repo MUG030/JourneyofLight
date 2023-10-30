@@ -13,11 +13,13 @@ public class UmbrellaController : MonoBehaviour
     private bool _isActive = false;
 
     public GameObject unbrella;
+    private Animator animator;
 
     private void Start()
     {
         _moveController = GetComponent<PlayerMoveController>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -27,6 +29,7 @@ public class UmbrellaController : MonoBehaviour
         {
             _isUmbrellaOpen = !_isUmbrellaOpen;
             _isActive = !_isActive;
+            animator.SetBool("IsUnbrella", _isActive);
             unbrella.SetActive(_isActive);
             UpdateUmbrellaState();
         }
