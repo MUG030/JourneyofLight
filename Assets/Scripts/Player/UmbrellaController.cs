@@ -10,6 +10,9 @@ public class UmbrellaController : MonoBehaviour
     private PlayerMoveController _moveController; // PlayerMoveControllerスクリプトへの参照
     private Rigidbody2D rb; // プレイヤーのRigidbody2Dコンポーネント
     private bool _isUmbrellaOpen = false; // 傘が開いているかどうかのフラグ
+    private bool _isActive = false;
+
+    public GameObject unbrella;
 
     private void Start()
     {
@@ -23,6 +26,8 @@ public class UmbrellaController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             _isUmbrellaOpen = !_isUmbrellaOpen;
+            _isActive = !_isActive;
+            unbrella.SetActive(_isActive);
             UpdateUmbrellaState();
         }
     }
