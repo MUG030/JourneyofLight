@@ -10,7 +10,7 @@ public class EnemyHP : MonoBehaviour
     [SerializeField] private int maxHp = 155;
     float currentHp;
     public float knockBackPower;
-    public GameObject enemyParticle;
+    //public GameObject enemyParticle;
 
     private Rigidbody2D rb;
 

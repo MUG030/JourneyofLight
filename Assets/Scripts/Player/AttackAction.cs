@@ -22,8 +22,9 @@ public class AttackAction : MonoBehaviour
     async void Update()
     {
         // isAttack が true になった直後に処理を開始する
-        if (!Light2DAnimation.isAttack && Input.GetKeyDown(KeyCode.X))
+        if (Light2DAnimation.isAttack && Input.GetKeyDown(KeyCode.X))
         {
+            Debug.Log("攻撃処理開始");
             await ActivateAttackObjectsAsync();
         }
     }
