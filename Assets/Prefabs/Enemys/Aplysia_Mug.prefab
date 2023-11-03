@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4777761786367528907}
   - component: {fileID: 4537987549960891127}
   - component: {fileID: -2823475396741745402}
+  - component: {fileID: 4376956319384022331}
   m_Layer: 0
   m_Name: Aplysia_Mug
   m_TagString: Untagged
@@ -123,10 +124,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 23397667018530290, guid: ed9572c845a0940cab6842067e3237d9, type: 3}
   randomColors:
   - {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
-  minForceX: -0.5
-  maxForceX: 0.5
-  minForceY: 3
-  maxForceY: 3.5
+  minForceX: -1
+  maxForceX: 1
+  minForceY: 4
+  maxForceY: 4.5
   minScale: 0.1
   maxScale: 0.3
 --- !u!61 &6432870629566929013
@@ -283,3 +284,16 @@ MonoBehaviour:
   knockBackPower: 0
   enemyParticle: {fileID: 0}
   isDamage: 0
+--- !u!114 &4376956319384022331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3776467519899444267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043f04a0d5ca669459f4924ab401a9aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyThresholdY: -16

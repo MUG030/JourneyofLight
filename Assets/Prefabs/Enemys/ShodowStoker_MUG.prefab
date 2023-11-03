@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2457313285891294972}
   - component: {fileID: 6308768432999609344}
   - component: {fileID: 1783928475445591421}
+  - component: {fileID: 1973330976342921392}
   m_Layer: 0
   m_Name: ShodowStoker_MUG
   m_TagString: Untagged
@@ -203,3 +204,16 @@ MonoBehaviour:
   maxHp: 3
   knockBackPower: 3
   isDamage: 0
+--- !u!114 &1973330976342921392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003937522465896971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043f04a0d5ca669459f4924ab401a9aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyThresholdY: -16
