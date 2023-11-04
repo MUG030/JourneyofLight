@@ -9,6 +9,7 @@ public class TypeWriteEffect : MonoBehaviour
     public TMP_Text textMeshPro;
     public List<string> textList;
     public float typingSpeed = 0.1f;
+    public FadeOutSystem fadeOutSystem;
 
     private int currentIndex = 0;
     private bool isTyping = false;
@@ -28,7 +29,7 @@ public class TypeWriteEffect : MonoBehaviour
         }
     }
 
-    private void ShowNextText()
+    private async void ShowNextText()
     {
         if (currentIndex < textList.Count)
         {
@@ -44,7 +45,7 @@ public class TypeWriteEffect : MonoBehaviour
                 .SetOptions(true)
                 .SetEase(Ease.Linear)
                 .SetUpdate(true)
-                .OnComplete(async () =>
+                .OnComplete(() =>
                 {
                     isTyping = false;
                     currentIndex++;
@@ -52,26 +53,13 @@ public class TypeWriteEffect : MonoBehaviour
                     if (currentIndex == textList.Count)
                     {
                         Debug.Log("全ての文章が表示されました。");
-
-                        // FadeCanvasオブジェクトをタグで検索
-                        GameObject fadeCanvas = GameObject.FindWithTag("FadeCanvas");
-
-                        if (fadeCanvas != null)
-                        {
-                            Debug.Log("発見した");
-                            // FadeScene.csのFadeOutメソッドを呼び出す
-                            FadeScene fadeScene = fadeCanvas.GetComponent<FadeScene>();
-                            if (fadeScene != null)
-                            {
-                                await fadeScene.FadeOut();
-                            }
-                        }
                     }
                 });
         }
         else
         {
-            Debug.Log("全ての文章が表示されました。");
+            Debug.Log("次のシーンが呼ばれます");
+            await fadeOutSystem.FadeOut();
         }
     }
 }

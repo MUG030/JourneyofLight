@@ -30,8 +30,10 @@ public class FadeInSystem : MonoBehaviour
     public async UniTask FadeIn()
     {
         Debug.Log("アクティブ");
+        //Time.timeScale = 0;
         _cg.DOFade(endAlpha, duration).SetEase(EaseTime);
         await UniTask.Delay(TimeSpan.FromSeconds(duration));
+        Time.timeScale = 1;
         gameObject.SetActive(!gameObject.activeSelf);
     }
 
