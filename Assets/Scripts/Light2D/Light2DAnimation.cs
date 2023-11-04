@@ -20,12 +20,14 @@ public class Light2DAnimation : MonoBehaviour
     private void Start()
     {
         currentValue = _minValue;
+        Debug.Log(_attackValue);
     }
 
 
 
     private void Update()
     {
+
         // Xキーが押されたらInnerRadiusを増加させる
         if (!isAttack && Input.GetKeyDown(KeyCode.X))
         {
@@ -33,11 +35,11 @@ public class Light2DAnimation : MonoBehaviour
             _attackSpeed = _animationSpeed * _attackrate;
             isAttack = true;
             isIncreasing = true;
-            Debug.Log(isAttack);
         }
 
         if (isAttack)
         {
+            Debug.Log(currentValue);
             // Innerの値を連続で変化させるアニメーション
             currentValue += (isIncreasing ? 1 : -1) * _attackSpeed * Time.deltaTime;
             currentValue = Mathf.Clamp(currentValue, _minValue, _attackValue);
@@ -47,7 +49,8 @@ public class Light2DAnimation : MonoBehaviour
             if (currentValue >= _attackValue)
             {
                 isIncreasing = !isIncreasing;
-            } else if (currentValue <= _minValue)
+            }
+            else if (currentValue <= _minValue)
             {
                 isAttack = false;
             }
