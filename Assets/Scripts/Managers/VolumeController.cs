@@ -28,6 +28,7 @@ public class VolumeController : MonoBehaviour
                 break;
             case VolumeType.BGM:
                 soundManager.BgmVolume = slider.value;
+                Debug.Log("BGM調整"); 
                 break;
             case VolumeType.SE:
                 soundManager.SeVolume = slider.value;

@@ -13,7 +13,7 @@ public class BGMBase : MonoBehaviour
     {
         if (_clip != null)
         {
-            Debug.Log("test");
+            Debug.Log("音を鳴らす");
             _soundManager.PlayBgm(_clip);
         }
     }

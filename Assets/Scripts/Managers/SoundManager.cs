@@ -73,7 +73,6 @@ public class SoundManager : MonoBehaviour
         {
             return;
         }
-
         _bgmAudioSource.Play();
     }
 
@@ -86,5 +85,4 @@ public class SoundManager : MonoBehaviour
 
         _seAudioSource.PlayOneShot(clip);
     }
-
 }
