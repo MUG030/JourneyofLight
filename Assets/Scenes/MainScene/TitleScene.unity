@@ -6189,6 +6189,10 @@ PrefabInstance:
       propertyPath: setObject
       value: 
       objectReference: {fileID: 2047093372}
+    - target: {fileID: 4759048176872596296, guid: 4732ff17c0c0c4748927762c9e19664f, type: 3}
+      propertyPath: _setObject
+      value: 
+      objectReference: {fileID: 2047093372}
     - target: {fileID: 7840097424933629205, guid: 4732ff17c0c0c4748927762c9e19664f, type: 3}
       propertyPath: m_Name
       value: SManager
@@ -6406,6 +6410,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7719992761313633116, guid: 6eb4d53e3472443dbb17c5520be6d0dd, type: 3}
+      propertyPath: _setObject
+      value: 
+      objectReference: {fileID: 2047093372}
     - target: {fileID: 7865486977975103865, guid: 6eb4d53e3472443dbb17c5520be6d0dd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
