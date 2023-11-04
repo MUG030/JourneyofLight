@@ -5308,9 +5308,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1760458342}
-        m_TargetAssemblyTypeName: FadeScene, Assembly-CSharp
-        m_MethodName: FadeSystem
+      - m_Target: {fileID: 1760458348}
+        m_TargetAssemblyTypeName: FadeOutSystem, Assembly-CSharp
+        m_MethodName: Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5625,13 +5625,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3036139579691371288, guid: a954d3ededb04470b91ded472f86969c, type: 3}
+      propertyPath: _sceneName
+      value: EpilogueScene
+      objectReference: {fileID: 0}
     - target: {fileID: 4187837161023505637, guid: a954d3ededb04470b91ded472f86969c, type: 3}
       propertyPath: m_Name
       value: FadeCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 4187837161023505637, guid: a954d3ededb04470b91ded472f86969c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5441294108507976208, guid: a954d3ededb04470b91ded472f86969c, type: 3}
       propertyPath: m_Camera
@@ -5723,11 +5727,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8523342618513268223, guid: a954d3ededb04470b91ded472f86969c, type: 3}
       propertyPath: SceneNames.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8523342618513268223, guid: a954d3ededb04470b91ded472f86969c, type: 3}
       propertyPath: SceneNames.Array.data[0]
       value: EpilogueScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523342618513268223, guid: a954d3ededb04470b91ded472f86969c, type: 3}
+      propertyPath: SceneNames.Array.data[1]
+      value: Tattsu Scene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5868,15 +5876,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545415636}
   m_CullTransparentMesh: 1
---- !u!114 &1760458342 stripped
+--- !u!114 &1760458348 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8523342618513268223, guid: a954d3ededb04470b91ded472f86969c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3036139579691371288, guid: a954d3ededb04470b91ded472f86969c, type: 3}
   m_PrefabInstance: {fileID: 1534376406}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e9fe92e4576640868c66660584a7e86, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d4fb80eb57ec48fea9657ed32b16cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1763076411

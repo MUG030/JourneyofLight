@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5441294108507976208}
   - component: {fileID: 5919840738867234395}
   - component: {fileID: 6819049639295583218}
-  - component: {fileID: 8523342618513268223}
   - component: {fileID: 4363966151285772263}
+  - component: {fileID: 9048057280471327438}
+  - component: {fileID: 3036139579691371288}
   m_Layer: 5
   m_Name: FadeCanvas
   m_TagString: FadeCanvas
@@ -104,24 +105,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8523342618513268223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4187837161023505637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e9fe92e4576640868c66660584a7e86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EaseTime: 4
-  duration: 3
-  startAlpha: 1
-  endAlpha: 0
-  _cg: {fileID: 4363966151285772263}
-  SceneNames: []
 --- !u!225 &4363966151285772263
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -134,6 +117,41 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &9048057280471327438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4187837161023505637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d2eb12bedab4b05bd300237d13afda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EaseTime: 4
+  duration: 3
+  startAlpha: 1
+  endAlpha: 0
+  _cg: {fileID: 4363966151285772263}
+--- !u!114 &3036139579691371288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4187837161023505637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4fb80eb57ec48fea9657ed32b16cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EaseTime: 4
+  duration: 3
+  startAlpha: 1
+  endAlpha: 0
+  _cg: {fileID: 4363966151285772263}
+  _sceneName: 
 --- !u!1 &5924848238086153225
 GameObject:
   m_ObjectHideFlags: 0
