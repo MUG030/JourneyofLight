@@ -76,6 +76,10 @@ public class PlayerMoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (AttackAction.attackCommand)
+        {
+            return;
+        }
         bool isControl = _controlLoseTime <= 0;
         _isGrounded = CheckGround();
 

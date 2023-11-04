@@ -9,6 +9,7 @@ public class AttackAction : MonoBehaviour
     [SerializeField] private GameObject _attackObject1;
     [SerializeField] private GameObject _attackObject2;
     [SerializeField] private GameObject _attackObject3;
+    private bool attackSwitch = true;
 
     public static bool attackCommand = false;
 
@@ -22,8 +23,9 @@ public class AttackAction : MonoBehaviour
     async void Update()
     {
         // isAttack が true になった直後に処理を開始する
-        if (Light2DAnimation.isAttack && Input.GetKeyDown(KeyCode.X))
+        if (Light2DAnimation.isAttack && attackSwitch)
         {
+            attackSwitch = false;
             Debug.Log("攻撃処理開始");
             await ActivateAttackObjectsAsync();
         }
@@ -44,6 +46,7 @@ public class AttackAction : MonoBehaviour
         _attackObject3.SetActive(false);
         _attackObject2.SetActive(false);
         _attackObject1.SetActive(false);
+        attackSwitch = true;
         attackCommand = !attackCommand;
     }
 }

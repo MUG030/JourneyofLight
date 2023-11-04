@@ -33,6 +33,7 @@ public class Light2DAnimation : MonoBehaviour
             _attackSpeed = _animationSpeed * _attackrate;
             isAttack = true;
             isIncreasing = true;
+            Debug.Log(isAttack);
         }
 
         if (isAttack)
