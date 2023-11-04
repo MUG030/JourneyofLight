@@ -5629,10 +5629,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FadeCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4187837161023505637, guid: a954d3ededb04470b91ded472f86969c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5441294108507976208, guid: a954d3ededb04470b91ded472f86969c, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 401527309}
+    - target: {fileID: 5441294108507976208, guid: a954d3ededb04470b91ded472f86969c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7432549484659976206, guid: a954d3ededb04470b91ded472f86969c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5712,6 +5720,14 @@ PrefabInstance:
     - target: {fileID: 7432549484659976206, guid: a954d3ededb04470b91ded472f86969c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523342618513268223, guid: a954d3ededb04470b91ded472f86969c, type: 3}
+      propertyPath: SceneNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523342618513268223, guid: a954d3ededb04470b91ded472f86969c, type: 3}
+      propertyPath: SceneNames.Array.data[0]
+      value: EpilogueScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4363966151285772263}
   m_Layer: 5
   m_Name: FadeCanvas
-  m_TagString: Untagged
+  m_TagString: FadeCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &5919840738867234395
 MonoBehaviour:
@@ -121,6 +121,7 @@ MonoBehaviour:
   startAlpha: 1
   endAlpha: 0
   _cg: {fileID: 4363966151285772263}
+  SceneNames: []
 --- !u!225 &4363966151285772263
 CanvasGroup:
   m_ObjectHideFlags: 0

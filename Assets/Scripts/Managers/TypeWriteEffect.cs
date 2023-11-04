@@ -44,7 +44,7 @@ public class TypeWriteEffect : MonoBehaviour
                 .SetOptions(true)
                 .SetEase(Ease.Linear)
                 .SetUpdate(true)
-                .OnComplete(() =>
+                .OnComplete(async () =>
                 {
                     isTyping = false;
                     currentIndex++;
@@ -52,6 +52,20 @@ public class TypeWriteEffect : MonoBehaviour
                     if (currentIndex == textList.Count)
                     {
                         Debug.Log("全ての文章が表示されました。");
+
+                        // FadeCanvasオブジェクトをタグで検索
+                        GameObject fadeCanvas = GameObject.FindWithTag("FadeCanvas");
+
+                        if (fadeCanvas != null)
+                        {
+                            Debug.Log("発見した");
+                            // FadeScene.csのFadeOutメソッドを呼び出す
+                            FadeScene fadeScene = fadeCanvas.GetComponent<FadeScene>();
+                            if (fadeScene != null)
+                            {
+                                await fadeScene.FadeOut();
+                            }
+                        }
                     }
                 });
         }
