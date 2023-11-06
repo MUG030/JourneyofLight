@@ -22,7 +22,6 @@ public class Light : MonoBehaviour
     void Start()
     {
         currentValue = _minValue;
-        Debug.Log(_attackValue);
     }
 
     private void Update()
@@ -43,7 +42,6 @@ public class Light : MonoBehaviour
             currentValue += (isIncreasing ? 1 : -1) * _attackSpeed * Time.deltaTime;
             currentValue = Mathf.Clamp(currentValue, _minValue, _attackValue);
             light2D.pointLightInnerRadius = currentValue;
-            Debug.Log(currentValue);
 
             // 値が最大値または最小値に達したら方向を逆にする
             if (currentValue >= _attackValue)
