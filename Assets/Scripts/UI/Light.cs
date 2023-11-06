@@ -1,9 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class Light2DAnimation : MonoBehaviour
+public class Light : MonoBehaviour
 {
     public Light2D light2D;
     [SerializeField] private float _animationSpeed = 1f;
@@ -16,14 +16,14 @@ public class Light2DAnimation : MonoBehaviour
     private float currentValue;
     private bool isIncreasing = true;
     public static bool isAttack = false;
+    public static bool attackCommand = false;
+    internal Color color;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         currentValue = _minValue;
-        Debug.Log(_attackValue);
     }
-
-
 
     private void Update()
     {
@@ -35,11 +35,11 @@ public class Light2DAnimation : MonoBehaviour
             _attackSpeed = _animationSpeed * _attackrate;
             isAttack = true;
             isIncreasing = true;
+            attackCommand = true;
         }
 
         if (isAttack)
         {
-            Debug.Log(currentValue);
             // Innerの値を連続で変化させるアニメーション
             currentValue += (isIncreasing ? 1 : -1) * _attackSpeed * Time.deltaTime;
             currentValue = Mathf.Clamp(currentValue, _minValue, _attackValue);
@@ -49,12 +49,14 @@ public class Light2DAnimation : MonoBehaviour
             if (currentValue >= _attackValue)
             {
                 isIncreasing = !isIncreasing;
+                attackCommand = !attackCommand;
             }
             else if (currentValue <= _minValue)
             {
                 isAttack = false;
             }
-        } else
+        }
+        else
         {
             // Innerの値を連続で変化させるアニメーション
             currentValue += (isIncreasing ? 1 : -1) * _animationSpeed * Time.deltaTime;

@@ -43,7 +43,7 @@ public class PlayerMoveController : MonoBehaviour
         animator.SetBool("IsWalk", _isGrounded);
         //animator.SetBool("IsJump", true);
 
-        if (!isControl || AttackAction.attackCommand)
+        if (!isControl || Light.isAttack)
         {
             horizontalInput = 0f;
         }
@@ -58,7 +58,7 @@ public class PlayerMoveController : MonoBehaviour
         }
 
         // スペースキーを押したらジャンプする
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded && isControl && !AttackAction.attackCommand)
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded && isControl && !Light.attackCommand)
         {
             Jump();
         }
@@ -76,14 +76,14 @@ public class PlayerMoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (AttackAction.attackCommand)
+        if (Light.isAttack)
         {
             return;
         }
         bool isControl = _controlLoseTime <= 0;
         _isGrounded = CheckGround();
 
-        if ((_isGrounded || horizontalInput != 0) && isControl && !AttackAction.attackCommand)
+        if ((_isGrounded || horizontalInput != 0) && isControl && !Light.attackCommand)
         {
             // 移動方向に速度を適用
             rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);

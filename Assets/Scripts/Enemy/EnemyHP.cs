@@ -16,6 +16,8 @@ public class EnemyHP : MonoBehaviour
 
     public bool isDamage = false;
 
+    public static int deadEnemyCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +65,6 @@ public class EnemyHP : MonoBehaviour
 
     public void KnockBack(Vector2 direction)
     {
-        Debug.Log(direction);
         if (0f > direction.x)
         {
             direction.x = -1.0f;
@@ -91,6 +92,8 @@ public class EnemyHP : MonoBehaviour
 
     private void EnemyDead()
     {
+        deadEnemyCount++;
+        Debug.Log("敵を倒した数" + deadEnemyCount);
         Destroy(gameObject);
     }
 }

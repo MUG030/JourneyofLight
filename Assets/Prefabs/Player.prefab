@@ -270,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 454437853352779005}
   - component: {fileID: 5602436441861956425}
-  - component: {fileID: 4377470596037093262}
+  - component: {fileID: 8312442335574377535}
   - component: {fileID: 924250570653851976}
   m_Layer: 0
   m_Name: Light 2D
@@ -347,7 +347,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &4377470596037093262
+--- !u!114 &8312442335574377535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -356,15 +356,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4396269790722851093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c070404628b470749a8b2e3ca61d203a, type: 3}
+  m_Script: {fileID: 11500000, guid: d3db5802afb8340cfbc9b43abdc6f424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   light2D: {fileID: 5602436441861956425}
   _animationSpeed: 0.3
-  _attackrate: 1
+  _attackrate: 5
   _minValue: 0
   _maxValue: 1.5
-  _attackValue: 1
+  _attackValue: 5
 --- !u!114 &924250570653851976
 MonoBehaviour:
   m_ObjectHideFlags: 0

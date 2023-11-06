@@ -91,6 +91,8 @@ public class StokerHP : MonoBehaviour
 
     private void EnemyDead()
     {
+        EnemyHP.deadEnemyCount++;
+        Debug.Log("敵を倒した数" + EnemyHP.deadEnemyCount);
         Destroy(gameObject);
     }
 
