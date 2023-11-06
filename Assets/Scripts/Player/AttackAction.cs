@@ -11,8 +11,6 @@ public class AttackAction : MonoBehaviour
     [SerializeField] private GameObject _attackObject3;
     private bool attackSwitch = true;
 
-    public static bool attackCommand = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +21,8 @@ public class AttackAction : MonoBehaviour
     async void Update()
     {
         // isAttack が true になった直後に処理を開始する
-        if (Light2DAnimation.isAttack && attackSwitch)
+        if (Light.isAttack && Light.attackCommand && attackSwitch)
         {
-            attackSwitch = false;
             Debug.Log("攻撃処理開始");
             await ActivateAttackObjectsAsync();
         }
@@ -33,7 +30,7 @@ public class AttackAction : MonoBehaviour
 
     private async UniTask ActivateAttackObjectsAsync()
     {
-        attackCommand = !attackCommand;
+        attackSwitch = !attackSwitch;
         _attackObject1.SetActive(true);
 
         await UniTask.Delay(TimeSpan.FromSeconds(1.3));
@@ -46,7 +43,6 @@ public class AttackAction : MonoBehaviour
         _attackObject3.SetActive(false);
         _attackObject2.SetActive(false);
         _attackObject1.SetActive(false);
-        attackSwitch = true;
-        attackCommand = !attackCommand;
+        attackSwitch = !attackSwitch;
     }
 }

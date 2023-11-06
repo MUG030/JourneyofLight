@@ -16,6 +16,7 @@ public class Light : MonoBehaviour
     private float currentValue;
     private bool isIncreasing = true;
     public static bool isAttack = false;
+    public static bool attackCommand = false;
     internal Color color;
 
     // Start is called before the first frame update
@@ -34,6 +35,7 @@ public class Light : MonoBehaviour
             _attackSpeed = _animationSpeed * _attackrate;
             isAttack = true;
             isIncreasing = true;
+            attackCommand = true;
         }
 
         if (isAttack)
@@ -46,8 +48,8 @@ public class Light : MonoBehaviour
             // 値が最大値または最小値に達したら方向を逆にする
             if (currentValue >= _attackValue)
             {
-                Debug.Log("折り返し");
                 isIncreasing = !isIncreasing;
+                attackCommand = !attackCommand;
             }
             else if (currentValue <= _minValue)
             {
