@@ -9,6 +9,7 @@ public class GoalLight : MonoBehaviour
     [SerializeField] private float _animationSpeed = 1f;
     [SerializeField] private float _minValue = 0f;
     [SerializeField] private float _maxValue = 1f;
+    [SerializeField] private int _clearCount = 0;
     [SerializeField] private Color targetColor;
     public FadeOutSystem fadeOutSystem;
 
@@ -27,7 +28,7 @@ public class GoalLight : MonoBehaviour
     // Update is called once per frame
     private async void Update()
     {
-        if (EnemyHP.deadEnemyCount >= 1)
+        if (EnemyHP.deadEnemyCount >= _clearCount)
         {
             light2D.color = targetColor;
             if (changeScene && Input.GetKeyDown(KeyCode.Return))

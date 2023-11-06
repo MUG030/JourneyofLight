@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HPBar : MonoBehaviour
 {
     //最大HPと現在のHP。
-    int maxHp = 155;
+    int maxHp = 150;
     float currentHp;
     public Slider slider;
     private bool _isUmbrellaOpen = false; // 傘が開いているかどうかのフラグ
@@ -70,6 +71,7 @@ public class HPBar : MonoBehaviour
         if (currentHp <= 0)
         {
             currentHp = 0;
+            Dead();
         }
 
         float switchHP = currentHp / maxHp;
@@ -100,5 +102,10 @@ public class HPBar : MonoBehaviour
         }
 
         slider.value = currentHp / (float)maxHp;
+    }
+
+    public void Dead()
+    {
+        SceneManager.LoadScene("TitleScene");
     }
 }
