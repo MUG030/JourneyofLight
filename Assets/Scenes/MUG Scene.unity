@@ -11649,6 +11649,10 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4377470596037093262, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377470596037093262, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
       propertyPath: _attackrate
       value: 5
       objectReference: {fileID: 0}
@@ -11668,7 +11672,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4377470596037093262, guid: 81b9c04dd4dafba4ba62329949e3a1f5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

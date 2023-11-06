@@ -63,7 +63,6 @@ public class EnemyHP : MonoBehaviour
 
     public void KnockBack(Vector2 direction)
     {
-        Debug.Log(direction);
         if (0f > direction.x)
         {
             direction.x = -1.0f;
