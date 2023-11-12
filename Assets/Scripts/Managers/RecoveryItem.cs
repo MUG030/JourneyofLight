@@ -7,6 +7,6 @@ public class RecoveryItem : MonoBehaviour, IRecoverable
     public int AddRecovery()
     {
         Destroy(gameObject);
-        return 10;
+        return 3;
     }
 }

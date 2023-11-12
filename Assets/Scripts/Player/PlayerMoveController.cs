@@ -78,7 +78,7 @@ public class PlayerMoveController : MonoBehaviour
     {
         if (Light.isAttack)
         {
-            rb.velocity = new Vector2(0, 0);
+            rb.velocity = new Vector2(0, rb.velocity.y);
             return;
         }
         bool isControl = _controlLoseTime <= 0;
