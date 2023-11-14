@@ -20,12 +20,17 @@ public class TypeWriteEffect : MonoBehaviour
         ShowNextText();
     }
 
-    private void Update()
+    private async void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return) && !isTyping)
         {
             // Enterキーが押されたら次の文章を表示
             ShowNextText();
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && isTyping)
+        {
+            Debug.Log("スキップが選択された。");
+            await fadeOutSystem.FadeOut();
         }
     }
 
