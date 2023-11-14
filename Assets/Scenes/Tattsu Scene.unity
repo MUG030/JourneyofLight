@@ -2976,10 +2976,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light2D: {fileID: 642039298}
-  changeColor1: {r: 0.2, g: 0.2, b: 0.2, a: 0}
-  changeColor2: {r: 0.23921569, g: 0.23921569, b: 0.23921569, a: 0}
-  _deadEnemy1: 1
-  _deadEnemy2: 2
+  changeColors:
+  - {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0}
+  - {r: 0.254717, g: 0.254717, b: 0.254717, a: 0}
+  - {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0}
+  - {r: 0.4, g: 0.4, b: 0.4, a: 0}
+  deadEnemies: 01000000050000000a0000000f000000
 --- !u!1001 &660101835
 PrefabInstance:
   m_ObjectHideFlags: 0
