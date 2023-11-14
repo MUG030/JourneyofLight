@@ -36,15 +36,14 @@ public class PlayerMoveController : MonoBehaviour
     {
         bool isControl = _controlLoseTime <= 0;
 
+        // 左右の入力を取得
+        horizontalInput = Input.GetAxis("Horizontal");
+
         if (!isControl || Light.isAttack)
         {
             animator.SetFloat("Speed", 0);
             horizontalInput = 0f;
-            return;
         }
-
-        // 左右の入力を取得
-        horizontalInput = Input.GetAxis("Horizontal");
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
         
@@ -140,11 +139,9 @@ public class PlayerMoveController : MonoBehaviour
             direction.x = 1.0f;
         }
         rb.velocity = Vector2.zero;
-        // x軸に沿ったノックバックを実行する
         Vector2 knockbackForce = new Vector2(direction.x * knockBackPower, 5f);
 
-        // ノックバック力を適用
         rb.velocity = knockbackForce;
-        _controlLoseTime = 1f;
+        _controlLoseTime = 1f;  // これ今後はUniTaskで処理したい。
     }
 }
