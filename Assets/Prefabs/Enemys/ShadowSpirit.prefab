@@ -5105,7 +5105,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 10
   knockBackPower: 2
-  enemyParticle: {fileID: 0}
   isDamage: 0
 --- !u!114 &-7338795496091968292
 MonoBehaviour:
@@ -5356,4 +5355,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef71eed1c18e84d3ca5be0033cede65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shadowDamage: 5
+  shadowDamage: 10

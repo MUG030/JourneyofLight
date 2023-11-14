@@ -124,8 +124,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 23397667018530290, guid: ed9572c845a0940cab6842067e3237d9, type: 3}
   randomColors:
   - {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
-  minForceX: -1
-  maxForceX: 1
+  minForceX: -1.3
+  maxForceX: 1.3
   minForceY: 4
   maxForceY: 4.5
   minScale: 0.1
@@ -282,7 +282,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 4
   knockBackPower: 0
-  enemyParticle: {fileID: 0}
   isDamage: 0
 --- !u!114 &4376956319384022331
 MonoBehaviour:

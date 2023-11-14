@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class HPBar : MonoBehaviour
 {
     //最大HPと現在のHP。
-    int maxHp = 150;
-    float currentHp;
+    [SerializeField] private int maxHp = 150;
+    private float currentHp;
     public Slider slider;
     private bool _isUmbrellaOpen = false; // 傘が開いているかどうかのフラグ
     private bool _damageSprite1 = false;
