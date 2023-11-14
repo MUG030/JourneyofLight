@@ -27,6 +27,7 @@ public class Light : MonoBehaviour
 
     private void Update()
     {
+        if (!PlayerMoveController.isGrounded) return;
 
         // Xキーが押されたらInnerRadiusを増加させる
         if (!isAttack && Input.GetKeyDown(KeyCode.X))

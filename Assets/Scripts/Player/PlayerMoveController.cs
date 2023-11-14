@@ -17,7 +17,7 @@ public class PlayerMoveController : MonoBehaviour
     private float _controlLoseTime;
 
     // 地面に接触しているかを判定
-    private bool _isGrounded;
+    public static bool isGrounded;
 
     private Rigidbody2D rb; // プレイヤーのRigidbody2Dコンポーネント
     private Animator animator;
@@ -53,17 +53,17 @@ public class PlayerMoveController : MonoBehaviour
 
         if (horizontalInput > 0.0f)
         {
-            animator.SetBool("IsWalk", _isGrounded);
+            animator.SetBool("IsWalk", isGrounded);
             transform.localScale = new Vector2(1, 1);
         }
         else if (horizontalInput < 0.0f)
         {
-            animator.SetBool("IsWalk", _isGrounded);
+            animator.SetBool("IsWalk", isGrounded);
             transform.localScale = new Vector2(-1, 1);
         }
 
         // スペースキーを押したらジャンプする
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded && isControl && !Light.attackCommand)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && isControl && !Light.attackCommand)
         {
             Jump();
         }
@@ -87,9 +87,9 @@ public class PlayerMoveController : MonoBehaviour
             return;
         }
         bool isControl = _controlLoseTime <= 0;
-        _isGrounded = CheckGround();
+        isGrounded = CheckGround();
 
-        if ((_isGrounded || horizontalInput != 0) && isControl && !Light.attackCommand)
+        if ((isGrounded || horizontalInput != 0) && isControl && !Light.attackCommand)
         {
             // 移動方向に速度を適用
             rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
