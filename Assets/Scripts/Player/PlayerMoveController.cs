@@ -36,24 +36,30 @@ public class PlayerMoveController : MonoBehaviour
     {
         bool isControl = _controlLoseTime <= 0;
 
+        if (!isControl || Light.isAttack)
+        {
+            animator.SetFloat("Speed", 0);
+            horizontalInput = 0f;
+            return;
+        }
+
         // 左右の入力を取得
         horizontalInput = Input.GetAxis("Horizontal");
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
-        animator.SetBool("IsWalk", _isGrounded);
+        
         //animator.SetBool("IsJump", true);
 
-        if (!isControl || Light.isAttack)
-        {
-            horizontalInput = 0f;
-        }
+        
 
         if (horizontalInput > 0.0f)
         {
+            animator.SetBool("IsWalk", _isGrounded);
             transform.localScale = new Vector2(1, 1);
         }
         else if (horizontalInput < 0.0f)
         {
+            animator.SetBool("IsWalk", _isGrounded);
             transform.localScale = new Vector2(-1, 1);
         }
 
