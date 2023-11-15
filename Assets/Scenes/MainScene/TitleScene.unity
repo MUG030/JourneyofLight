@@ -7550,8 +7550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318328d0acca24776972b679f16e7b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundManager: {fileID: 1402312156}
-  _clip: {fileID: 8300000, guid: 855b75b6ae3ab4de6bcc08aa43315d77, type: 3}
+  _clip: {fileID: 8300000, guid: f80b2a633dbb343d2878e8b33f65df79, type: 3}
 --- !u!1 &1253220677
 GameObject:
   m_ObjectHideFlags: 0
@@ -7820,17 +7819,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276978924}
   m_CullTransparentMesh: 1
---- !u!114 &1402312156 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 325431644561156189, guid: 889833b2158d44ce086a0454256e0b0d, type: 3}
-  m_PrefabInstance: {fileID: 8717471750439120626}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac2a07a166e4f43ebb96fe8daf29d4ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1489397131
 GameObject:
   m_ObjectHideFlags: 0
@@ -7929,7 +7917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187837161023505637, guid: a954d3ededb04470b91ded472f86969c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5441294108507976208, guid: a954d3ededb04470b91ded472f86969c, type: 3}
       propertyPath: m_Camera
