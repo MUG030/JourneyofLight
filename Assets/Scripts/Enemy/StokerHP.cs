@@ -86,6 +86,7 @@ public class StokerHP : MonoBehaviour
         isDamage = !isDamage;
         await UniTask.Delay(TimeSpan.FromSeconds(1.2));
         isDamage = !isDamage;
+        if (currentHp <= 0) return;
         rb.velocity = Vector2.zero;
     }
 

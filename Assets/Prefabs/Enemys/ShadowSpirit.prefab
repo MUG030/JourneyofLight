@@ -5118,7 +5118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043f04a0d5ca669459f4924ab401a9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyThresholdY: -16
+  destroyThresholdY: -30
 --- !u!1 &3896452637021274447
 GameObject:
   m_ObjectHideFlags: 0

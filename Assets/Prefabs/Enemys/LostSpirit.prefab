@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043f04a0d5ca669459f4924ab401a9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyThresholdY: -16
+  destroyThresholdY: -30
 --- !u!95 &785270527819784836
 Animator:
   serializedVersion: 5
