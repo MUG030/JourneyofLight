@@ -19,6 +19,11 @@ public class GoalLight : MonoBehaviour
 
     internal Color color;
 
+    private void Awake()
+    {
+        EnemyHP.deadEnemyCount = 0;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

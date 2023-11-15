@@ -46,14 +46,14 @@ public class MovingBlock : MonoBehaviour
             }
             if (movep >= 1.0f)
             {
-                movep = 0.0f;                   //移動補完値リセット
                 isReverse = !isReverse;         //移動を逆転
                 isCanMove = false;              //移動停止
-                if (isMoveWhenOn == false)
+                if (isCanMove == false)
                 {
                     //乗った時に動くフラグOFF
                     Invoke("Move", wait);       //移動フラグを立てる遅延実行
                 }
+                movep = 0.0f;                   //移動補完値リセット
             }
         }
     }
@@ -79,7 +79,6 @@ public class MovingBlock : MonoBehaviour
             collision.transform.SetParent(transform);
             if (isMoveWhenOn)
             {
-                Debug.Log("test");
                 //乗った時に動くフラグON
                 isCanMove = true;   //移動フラグを立てる
             }
