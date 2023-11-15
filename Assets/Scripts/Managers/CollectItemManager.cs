@@ -18,7 +18,7 @@ public class CollectItemManager : MonoBehaviour
             Debug.Log("count");
 
             // 新しいアイテムの生成位置を計算する
-            Vector3 spawnPosition = new Vector3(selfPosition.x, selfPosition.y + 10, selfPosition.z);
+            Vector3 spawnPosition = new Vector3(selfPosition.x, selfPosition.y + 1, selfPosition.z);
 
             // アイテムを指定した位置に生成
             GameObject newItem = Instantiate(itemPrefabs[randomIndex], spawnPosition, Quaternion.identity);

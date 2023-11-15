@@ -106,6 +106,6 @@ public class HPBar : MonoBehaviour
 
     public void Dead()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("Tattsu Scene");
     }
 }
