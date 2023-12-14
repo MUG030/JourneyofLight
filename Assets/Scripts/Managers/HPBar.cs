@@ -9,10 +9,11 @@ public class HPBar : MonoBehaviour
     //最大HPと現在のHP。
     [SerializeField] private int maxHp = 150;
     private float currentHp;
-    public Slider slider;
     private bool _isUmbrellaOpen = false; // 傘が開いているかどうかのフラグ
     private bool _damageSprite1 = false;
     private bool _damageSprite2 = false;
+
+    public Slider slider;
 
     [SerializeField] private GameObject _playerObject;
     private SpriteRenderer spriteRenderer;
