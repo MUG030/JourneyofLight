@@ -1,35 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class ModelMoveDemo : MonoBehaviour
 {
-    Rigidbody rb;
-    float speed = 3.0f;
+    private bool xBool;
+    private bool yBool;
+    private float move;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        move = 0.05f;
+        xBool = false;
+        yBool = false;
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        Vector3 position = new Vector3(move, 0, 0);
+        transform.Translate(position);
+
+        //1番目の回転
+        if (float.Parse(this.transform.position.x.ToString("f2")) == 3.0f)
         {
-            rb.velocity = transform.forward * speed;
+            if (!xBool) //xBoolがfalseの場合
+            {
+                xBool = true; //xBoolをtrueにする
+                transform.Rotate(new Vector3(0, 0, -90));
+            }
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+
+        //2番目の回転
+        if (float.Parse(this.transform.position.y.ToString("f2")) == -3.0f)
         {
-            rb.velocity = -transform.forward * speed;
+            if (!yBool) //yBoolがfalseの場合
+            {
+                yBool = true; //yBoolをtrueにする
+                transform.Rotate(new Vector3(0, 0, -90));
+            }
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+
+        //3番目の回転
+        if (float.Parse(this.transform.position.x.ToString("f2")) == -3.0f)
         {
-            rb.velocity = transform.right * speed;
+            if (xBool) //xBoolがtrueの場合
+            {
+                xBool = false; //xBoolをfalseにする
+                transform.Rotate(new Vector3(0, 0, -90));
+            }
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+
+        //4番目の回転
+        if (float.Parse(this.transform.position.y.ToString("f2")) == 3.0f)
         {
-            rb.velocity = -transform.right * speed;
+            if (yBool) //yBoolがtrueの場合
+            {
+                yBool = false; //yBoolをfalseにする
+                transform.Rotate(new Vector3(0, 0, -90));
+            }
         }
     }
-
 }
