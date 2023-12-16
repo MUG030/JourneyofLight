@@ -39,7 +39,7 @@ public class PlayerMoveController : MonoBehaviour
         // 左右の入力を取得
         horizontalInput = Input.GetAxis("Horizontal");
 
-        if (!isControl || Light.isAttack)
+        if (!isControl || LightFlutter.isAttack)
         {
             animator.SetFloat("Speed", 0);
             horizontalInput = 0f;
@@ -63,7 +63,7 @@ public class PlayerMoveController : MonoBehaviour
         }
 
         // スペースキーを押したらジャンプする
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && isControl && !Light.attackCommand)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && isControl && !LightFlutter.attackCommand)
         {
             Jump();
         }
@@ -81,7 +81,7 @@ public class PlayerMoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Light.isAttack)
+        if (LightFlutter.isAttack)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
             return;
@@ -89,7 +89,7 @@ public class PlayerMoveController : MonoBehaviour
         bool isControl = _controlLoseTime <= 0;
         isGrounded = CheckGround();
 
-        if ((isGrounded || horizontalInput != 0) && isControl && !Light.attackCommand)
+        if ((isGrounded || horizontalInput != 0) && isControl && !LightFlutter.attackCommand)
         {
             // 移動方向に速度を適用
             rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);

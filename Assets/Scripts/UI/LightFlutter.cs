@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class Light : MonoBehaviour
+public class LightFlutter : MonoBehaviour
 {
     public Light2D light2D;
     [SerializeField] private float _animationSpeed = 1f;

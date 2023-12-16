@@ -28,7 +28,7 @@ public class PlayerCollision : MonoBehaviour
             hpBar.Recovery(RecoveryNum);
         } else if (enemytarget != null)
         {
-            if (isDamage || Light.attackCommand) return;
+            if (isDamage || LightFlutter.attackCommand) return;
             float DamageNum = enemytarget.AddDamage();
             hpBar.Damage(DamageNum);
 

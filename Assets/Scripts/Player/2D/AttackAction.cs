@@ -21,7 +21,7 @@ public class AttackAction : MonoBehaviour
     async void Update()
     {
         // isAttack が true になった直後に処理を開始する
-        if (Light.isAttack && Light.attackCommand && attackSwitch)
+        if (LightFlutter.isAttack && LightFlutter.attackCommand && attackSwitch)
         {
             await ActivateAttackObjectsAsync();
         }
