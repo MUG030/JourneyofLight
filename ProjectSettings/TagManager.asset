@@ -9,6 +9,7 @@ TagManager:
   - SoundManager
   - FadeCanvas
   - CinemachineTarget
+  - Wall
   layers:
   - Default
   - TransparentFX
